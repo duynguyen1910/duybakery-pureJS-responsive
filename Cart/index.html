@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>DuyBakery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/boo
+tstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div style="position: sticky; top: 0; z-index: 10;">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid text-white px-md-4 px-lg-5">
+                <div class="d-flex align-items-center gap-1 gap-md-4">
+                    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </button>
+                    <a id="logo-nav" class="navbar-brand text-white" href="../Home/index.html">
+                        <img src="../img/logo.png" alt="logo" width="120" height="100" class="logo">
+                    </a>
+                </div>
+                <div class="d-flex align-items-center gap-4 gap-md-4 d-lg-none">
+                    <div class="search-default" type="submit">
+                        <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+                    </div>
+                    <a href="../Cart/index.html" class="cart-user"><i class="fas fa-shopping-cart "></i>
+                        <div class="item-cart">6</div>
+                    </a>
+                    <i class="fa-solid fa-circle-user fa-xl me-2"></i>
+                </div>
+                <div class="collapse navbar-collapse text-white pb-3 pb-lg-0" id="navbarNavDropdown">
+                    <ul class="navbar-nav fw-bold d-lg-flex justify-content-lg-between align-items-lg-center w-100 ">
+                        <ul class="d-lg-flex align-items-lg-center">
+                            <li class="mx-xxl-2">
+                                <a class="nav-link active text-white mx-2" aria-current="page" href="#">Sản phẩm</a>
+                            </li>
+                            <li class="nav-item dropdown d-flex justify-content-between mx-xxl-2">
+                                <a class="nav-link text-white mx-2" href="#">Giới thiệu</a>
+                            </li>
+                            <li class="nav-item dropdown d-flex justify-content-between mx-xxl-2">
+                                <a class="nav-link text-white mx-2" href="#">Bài viết</a>
+                            </li>
+                            <li class="nav-item dropdown d-flex justify-content-between mx-xxl-2">
+                                <a class="nav-link text-white mx-2 dropdown-toggle" href="#">Phản hồi</a>
+                            </li>
+                            <li class="nav-item dropdown d-flex justify-content-between mx-xxl-2">
+                                <a class="nav-link text-white dropdown-toggle mx-2" href="#">CSKH</a>
+                            </li>
+                            <li class="mx-xxl-2">
+                                <a class="nav-link text-white mx-2" href="#">Về chúng tôi</a>
+                            </li>
+                        </ul>
+                </div>
+                <div class="d-flex align-items-center d-none d-lg-flex gap-4">
+                    <div class="search-default d-xxl-none" type="submit" class="d-xxl-none">
+                        <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+                    </div>
+                    <div class="search d-none d-xxl-flex">
+                        <input type="text" class="searchTerm" placeholder="Nhập từ khóa tìm kiếm ...">
+                        <i class="fa fa-search fa-lg search-term-icon" aria-hidden="true"></i>
+                    </div>
+                    <a href="./cart.html" class="cart-user "><i class="fas fa-shopping-cart "></i>
+                        <div class="item-cart">6</div>
+                    </a>
+                    <i class="fa-solid fa-circle-user fa-xl"></i>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div>
+        <div class="router py-5">
+            <div class="title mb-xxl-2"><span class="orange-text">Giỏ Hàng</span> Của Bạn</div>
+            <div class="d-flex justify-content-center align-items-center">
+                <div>
+                    <a class="text-gray" href="../Home/index.html">Trang chủ</a>
+                    <i class="fa fa-chevron-right fa-xs" style=" color: #010148;   margin-right: 8px;"
+                        aria-hidden="true"></i>
+                    <span class="text-orange">Giỏ hàng</span>
+                </div>
+            </div>
+        </div>
+        <div class="py-3 py-md-5">
+            <div class="container-fluid">
+                <div class="row border-bottom py-2 py-md-3 d-none d-md-flex align-items-center">
+                    <div class="col-md-3" style="visibility: hidden;">San pham</div>
+                    <div class="col-md-2 fw-bold">Sản phẩm</div>
+                    <div class="col-md-2 fw-bold">Giá</div>
+                    <div class="col-md-3  fw-bold">Số lượng</div>
+                    <div class="col-md-2 fw-bold">Thao tác</div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row py-4 border-bottom align-items-center">
+                    <div class="d-flex align-items-center justify-content-center col-6 col-md-3">
+                        <img class="img-product" src="../img/banh1.webp" alt="" width="140" height="140">
+                    </div>
+                    <div class="col-6 d-flex flex-column justify-content-center gap-2 d-md-none"
+                        style="color: #010148;">
+                        <h6 class="fw-bold text-sm-start">Bánh mì</h6>
+                        <h5 class="price fw-bold text-xl-start" style="color: #ff6924;">750.000&nbsp;₫</h5>
+                        <div class="qty-input border">
+                            <button class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
+                            <input class="product-qty" type="number" name="product-qty" min="0" max="10" value="1">
+                            <button class="qty-count qty-count--add" data-action="add" type="button">+</button>
+                        </div>
+                        <i class="fa fa-trash d-none" aria-hidden="true"></i>
+                    </div>
+                    <h6 class="fw-bold text-sm-start d-none d-md-block col-md-2">Bánh mì</h6>
+                    <h5 class="price fw-bold text-xl-start  d-none d-md-block col-md-2" style="color: #ff6924;">
+                        750.000&nbsp;₫</h5>
+                    <div class="d-none d-md-block col-md-3 ">
+                        <div class="border qty-input">
+                            <button class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
+                            <input class="product-qty" type="number" name="product-qty" min="0" max="10" value="1">
+                            <button class="qty-count qty-count--add" data-action="add" type="button">+</button>
+                        </div>
+                    </div>
+
+                    <i class="fa fa-trash d-none d-md-block col-md-2" aria-hidden="true"></i>
+                </div>
+                <div class="row py-4 border-bottom align-items-center">
+                    <div class=" d-flex align-items-center justify-content-center col-6 col-md-3">
+                        <img class="img-product" src="../img/banh2.webp" alt="" width="140" height="140">
+                    </div>
+                    <div class="quantity-wrap col-6 d-flex flex-column justify-content-center gap-2 d-md-none"
+                        style="color: #010148;">
+                        <h6 class="fw-bold text-sm-start">Bánh Garden</h6>
+                        <h5 class="price fw-bold text-xl-start" style="color: #ff6924;">750.000&nbsp;₫</h5>
+                        <div class="qty-input border">
+                            <button class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
+                            <input class="product-qty" type="number" name="product-qty" min="0" value="1">
+                            <button class="qty-count qty-count--add" data-action="add" type="button">+</button>
+                        </div>
+                        <i class="fa fa-trash d-none" aria-hidden="true"></i>
+                    </div>
+                    <h6 class="fw-bold text-sm-start d-none d-md-block col-md-2">Bánh Garden</h6>
+                    <h5 class="price fw-bold text-xl-start  d-none d-md-block col-md-2" style="color: #ff6924;">
+                        350.000&nbsp;₫</h5>
+                    <div class="d-none d-md-block col-md-3 ">
+                        <div class="border qty-input">
+                            <button class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
+                            <input class="product-qty" type="number" name="product-qty" min="0" max="10" value="1">
+                            <button class="qty-count qty-count--add" data-action="add" type="button">+</button>
+                        </div>
+                    </div>
+                    <i class="fa fa-trash d-none d-md-block col-md-2" aria-hidden="true"></i>
+                </div>
+                <div class="row py-4 border-bottom align-items-center">
+                    <div class=" d-flex align-items-center justify-content-center col-6 col-md-3">
+                        <img class="img-product" src="../img/banh3.webp" alt="" width="140" height="140">
+                    </div>
+                    <div class="quantity-wrap col-6 d-flex flex-column justify-content-center gap-2 d-md-none"
+                        style="color: #010148;">
+                        <h6 class="fw-bold text-sm-start">Bánh Kim</h6>
+                        <h5 class="price fw-bold text-xl-start" style="color: #ff6924;">300.000&nbsp;₫</h5>
+                        <div class="qty-input border">
+                            <button class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
+                            <input class="product-qty" type="number" name="product-qty" min="0" value="1">
+                            <button class="qty-count qty-count--add" data-action="add" type="button">+</button>
+                        </div>
+                        <i class="fa fa-trash d-none" aria-hidden="true"></i>
+                    </div>
+                    <h6 class="fw-bold text-sm-start d-none d-md-block col-md-2">Bánh Kim</h6>
+                    <h5 class="price fw-bold text-xl-start  d-none d-md-block col-md-2" style="color: #ff6924;">
+                        300.000&nbsp;₫</h5>
+                    <div class="d-none d-md-block col-md-3 ">
+                        <div class="border qty-input">
+                            <button class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
+                            <input class="product-qty" type="number" name="product-qty" min="0" max="10" value="1">
+                            <button class="qty-count qty-count--add" data-action="add" type="button">+</button>
+                        </div>
+                    </div>
+                    <i class="fa fa-trash d-none d-md-block col-md-2" aria-hidden="true"></i>
+                </div>
+                <div class="row py-4 border-bottom align-items-center">
+                    <div class=" d-flex align-items-center justify-content-center col-6 col-md-3">
+                        <img class="img-product" src="../img/banh4.webp" alt="" width="140" height="140">
+                    </div>
+                    <div class="quantity-wrap col-6 d-flex flex-column justify-content-center gap-2 d-md-none"
+                        style="color: #010148;">
+                        <h6 class="fw-bold text-sm-start">Bánh Quế</h6>
+                        <h5 class="price fw-bold text-xl-start" style="color: #ff6924;">150.000&nbsp;₫</h5>
+                        <div class="qty-input border">
+                            <button class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
+                            <input class="product-qty" type="number" name="product-qty" min="0" value="1">
+                            <button class="qty-count qty-count--add" data-action="add" type="button">+</button>
+                        </div>
+                        <i class="fa fa-trash d-none" aria-hidden="true"></i>
+                    </div>
+                    <h6 class="fw-bold text-sm-start d-none d-md-block col-md-2">Bánh Quế</h6>
+                    <h5 class="price fw-bold text-xl-start  d-none d-md-block col-md-2" style="color: #ff6924;">
+                        150.000&nbsp;₫</h5>
+                    <div class="d-none d-md-block col-md-3 ">
+                        <div class="border qty-input">
+                            <button class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
+                            <input class="product-qty" type="number" name="product-qty" min="0" max="10" value="1">
+                            <button class="qty-count qty-count--add" data-action="add" type="button">+</button>
+                        </div>
+                    </div>
+                    <i class="fa fa-trash d-none d-md-block col-md-2" aria-hidden="true"></i>
+                </div>
+                <div class="row py-4 border-bottom align-items-center">
+                    <div class=" d-flex align-items-center justify-content-center col-6 col-md-3">
+                        <img class="img-product" src="../img/banh5.webp" alt="" width="140" height="140">
+                    </div>
+                    <div class="quantity-wrap col-6 d-flex flex-column justify-content-center gap-2 d-md-none"
+                        style="color: #010148;">
+                        <h6 class="fw-bold text-sm-start">Bánh Hạnh Phúc</h6>
+                        <h5 class="price fw-bold text-xl-start" style="color: #ff6924;">250.000&nbsp;₫</h5>
+                        <div class="qty-input border">
+                            <button class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
+                            <input class="product-qty" type="number" name="product-qty" min="0" value="1">
+                            <button class="qty-count qty-count--add" data-action="add" type="button">+</button>
+                        </div>
+                        <i class="fa fa-trash d-none" aria-hidden="true"></i>
+                    </div>
+                    <h6 class="fw-bold text-sm-start d-none d-md-block col-md-2">Bánh Hạnh Phúc</h6>
+                    <h5 class="price fw-bold text-xl-start  d-none d-md-block col-md-2" style="color: #ff6924;">
+                        250.000&nbsp;₫</h5>
+                    <div class="d-none d-md-block col-md-3 ">
+                        <div class="border qty-input">
+                            <button class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
+                            <input class="product-qty" type="number" name="product-qty" min="0" max="10" value="1">
+                            <button class="qty-count qty-count--add" data-action="add" type="button">+</button>
+                        </div>
+                    </div>
+                    <i class="fa fa-trash d-none d-md-block col-md-2" aria-hidden="true"></i>
+                </div>
+                <div class="row py-4 border-bottom align-items-center">
+                    <div class=" d-flex align-items-center justify-content-center col-6 col-md-3">
+                        <img class="img-product" src="../img/banh6.webp" alt="" width="140" height="140">
+                    </div>
+                    <div class="quantity-wrap col-6 d-flex flex-column justify-content-center gap-2 d-md-none"
+                        style="color: #010148;">
+                        <h6 class="fw-bold text-sm-start">Bánh mì</h6>
+                        <h5 class="price fw-bold text-xl-start" style="color: #ff6924;">750.000&nbsp;₫</h5>
+                        <div class="qty-input border">
+                            <button class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
+                            <input class="product-qty" type="number" name="product-qty" min="0" value="1">
+                            <button class="qty-count qty-count--add" data-action="add" type="button">+</button>
+                        </div>
+                        <i class="fa fa-trash d-none" aria-hidden="true"></i>
+                    </div>
+                    <h6 class="fw-bold text-sm-start d-none d-md-block col-md-2">Bánh mì</h6>
+                    <h5 class="price fw-bold text-xl-start  d-none d-md-block col-md-2" style="color: #ff6924;">
+                        750.000&nbsp;₫</h5>
+                    <div class="d-none d-md-block col-md-3 ">
+                        <div class="border qty-input">
+                            <button class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
+                            <input class="product-qty" type="number" name="product-qty" min="0" max="10" value="1">
+                            <button class="qty-count qty-count--add" data-action="add" type="button">+</button>
+                        </div>
+                    </div>
+                    <i class="fa fa-trash d-none d-md-block col-md-2" aria-hidden="true"></i>
+                </div>
+                <div class="row py-4 border-bottom align-items-center">
+                    <div class=" d-flex align-items-center justify-content-center col-6 col-md-3">
+                        <img class="img-product" src="../img/banh7.webp" alt="" width="140" height="140">
+                    </div>
+                    <div class="quantity-wrap col-6 d-flex flex-column justify-content-center gap-2 d-md-none"
+                        style="color: #010148;">
+                        <h6 class="fw-bold text-sm-start">Bánh Snake</h6>
+                        <h5 class="price fw-bold text-xl-start" style="color: #ff6924;">100.000&nbsp;₫</h5>
+                        <div class="qty-input border">
+                            <button class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
+                            <input class="product-qty" type="number" name="product-qty" min="0" value="1">
+                            <button class="qty-count qty-count--add" data-action="add" type="button">+</button>
+                        </div>
+                        <i class="fa fa-trash d-none" aria-hidden="true"></i>
+                    </div>
+                    <h6 class="fw-bold text-sm-start d-none d-md-block col-md-2">Bánh Snake</h6>
+                    <h5 class="price fw-bold text-xl-start  d-none d-md-block col-md-2" style="color: #ff6924;">
+                        100.000&nbsp;₫</h5>
+                    <div class="d-none d-md-block col-md-3 ">
+                        <div class="border qty-input">
+                            <button class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
+                            <input class="product-qty" type="number" name="product-qty" min="0" max="10" value="1">
+                            <button class="qty-count qty-count--add" data-action="add" type="button">+</button>
+                        </div>
+                    </div>
+                    <i class="fa fa-trash d-none d-md-block col-md-2" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div id="total" style="bottom: 0; left: 0; right: 0; z-index: 10;"
+                class="py-3 my-md-5 px-3 px-sm-5 px-md-3 bg-white pt-4 position-fixed bg-white shadow-lg">
+                <div class="coupon w-100 d-flex justify-content-between align-items-center mb-4 mb-xl-5">
+                    <input class="border" type="text" placeholder="Nhập mã ...">
+                    <button class="coupon-button-apply">Áp dụng</button>
+                </div>
+                <div class="d-flex justify-content-between  mb-4 mb-xl-5">
+                    <h6>Thành tiền: </h6>
+                    <h5 class="fw-bold mb-0">2.140.000&nbsp;₫</h5>
+                </div>
+
+                <div class="coupon d-flex justify-content-end align-items-center">
+                    <button class="coupon-button-payment">Thanh toán</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-3 py-sm-5 px-xl-5" style="background-color: #f1f1f1;">
+        <div class="title-center pb-3">Có Thể Bạn <span class="orange-text">Quan Tâm</span></div>
+        <div class="desc-title text-center mb-3 mb-sm-5 h-auto">
+            "Bánh ngọt – món quà tuyệt vời dành cho bất cứ ai" <br />
+            "Thưởng thức vị ngọt ngào của bánh, cảm nhận tình yêu đong đầy"
+        </div>
+        <div class="container-fluid">
+            <div class="row px-2 px-sm-0 px-md-5 px-lg-4 px-xl-5 gy-5 gx-md-5 gy-md-5 gy-sm-4">
+                <div class="col-sm-6 col-lg-4 col-xxl-3">
+                    <div class="product-block">
+                        <div class="left-block">
+                            <a class="product_img_link text-center text-sm-start" href="../Detail/index.html"
+                                title="Bánh Chocolate">
+                                <img class="img-responsive" src="../img/banh1.webp" alt="Affiliates banner 300x250"
+                                    width="250" height="250" /></a>
+                            <span class="quick-view btn-tooltip"><i class="fa fa-eye"></i></span>
+                            <span class="label-new label">Mới</span>
+                        </div>
+                        <div class="right-block">
+                            <div class="product-meta">
+                                <h5 class="name">
+                                    <span class="product-name">Bánh Chocolate</span>
+                                </h5>
+                                <div class="comments_note product-rating clearfix">
+                                    <div class="star_content">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                                <div class="content_price">
+                                    <span class="price product-price">70.500₫
+                                    </span>
+                                    <span class="old-price product-price">80.500₫</span>
+                                    <span class="price-percent-reduction">5%</span>
+                                </div>
+                                <div class="functional-buttons clearfix">
+                                    <span class="button ajax_add_to_cart_button">Thêm nhanh</span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xxl-3">
+                    <div class="product-block">
+                        <div class="left-block">
+                            <a class="product_img_link text-center" href="../Detail/index.html"
+                                title="Bánh kem Flower Of Love">
+                                <img class="img-responsive" src="../img/banh3.webp" alt="Bánh kem Flower Of Love"
+                                    width="250" height="250" /></a>
+                            <span class="quick-view btn-tooltip"><i class="fa fa-eye"></i></span>
+                            <span class="label-new label">Mới</span>
+                        </div>
+                        <div class="right-block">
+                            <div class="product-meta">
+                                <h5 class="name">
+                                    <span class="product-name">Bánh kem Flower Of Love</span>
+                                </h5>
+                                <div class="comments_note product-rating clearfix">
+                                    <div class="star_content">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                                <div class="content_price">
+                                    <span class="price product-price">100.000₫
+                                    </span>
+                                    <span class="old-price product-price">98.000₫</span>
+                                    <span class="price-percent-reduction">1%</span>
+                                </div>
+                                <div class="functional-buttons clearfix">
+                                    <span class="button ajax_add_to_cart_button">Thêm nhanh</span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xxl-3">
+                    <div class="product-block">
+                        <div class="left-block">
+                            <a class="product_img_link text-center" href="../Detail/index.html"
+                                title="Bánh Kem LiLy Garden">
+                                <img class="img-responsive" src="../img/banh4.webp" alt="Affiliates banner 300x250"
+                                    width="250" height="250" /></a>
+                            <span class="quick-view btn-tooltip"><i class="fa fa-eye"></i></span>
+                            <span class="label-new label">Mới</span>
+                        </div>
+                        <div class="right-block">
+                            <div class="product-meta">
+                                <h5 class="name">
+                                    <span class="product-name">Bánh Kem LiLy Garden</span>
+                                </h5>
+                                <div class="comments_note product-rating clearfix">
+                                    <div class="star_content">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                                <div class="content_price">
+                                    <span class="price product-price">70.500₫
+                                    </span>
+                                    <span class="old-price product-price">80.500₫</span>
+                                    <span class="price-percent-reduction">5%</span>
+                                </div>
+                                <div class="functional-buttons clearfix">
+                                    <span class="button ajax_add_to_cart_button">Thêm nhanh</span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xxl-3">
+                    <div class="product-block">
+                        <div class="left-block">
+                            <a class="product_img_link text-center" href="../Detail/index.html" title="Bánh Chocolate">
+                                <img class="img-responsive" src="../img/banh5.webp" alt="Affiliates banner 300x250"
+                                    width="250" height="250" /></a>
+                            <span class="quick-view btn-tooltip"><i class="fa fa-eye"></i></span>
+                            <span class="label-new label">Mới</span>
+                        </div>
+                        <div class="right-block">
+                            <div class="product-meta">
+                                <h5 class="name">
+                                    <span class="product-name">Bánh Kem Chocolate Lover </span>
+                                </h5>
+                                <div class="comments_note product-rating clearfix">
+                                    <div class="star_content">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                                <div class="content_price">
+                                    <span class="price product-price">380.000₫
+                                    </span>
+                                    <span class="old-price product-price">400.00₫</span>
+                                    <span class="price-percent-reduction">10%</span>
+                                </div>
+                                <div class="functional-buttons clearfix">
+                                    <span class="button ajax_add_to_cart_button">Thêm nhanh</span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xxl-3">
+                    <div class="product-block">
+                        <div class="left-block">
+                            <a class="product_img_link text-center" href="../Detail/index.html" title="Bánh Flutter">
+                                <img class="img-responsive" src="../img/banh18.webp" alt="Affiliates banner 300x250"
+                                    width="250" height="250" /></a>
+                            <span class="quick-view btn-tooltip"><i class="fa fa-eye"></i></span>
+                            <span class="label-new label">Mới</span>
+                        </div>
+                        <div class="right-block">
+                            <div class="product-meta">
+                                <h5 class="name">
+                                    <span class="product-name">Bánh Kem Rosie Love</span>
+                                </h5>
+                                <div class="comments_note product-rating clearfix">
+                                    <div class="star_content">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                                <div class="content_price">
+                                    <span class="price product-price">380.000₫
+                                    </span>
+                                    <span class="old-price product-price">390.00₫</span>
+                                    <span class="price-percent-reduction">7.5%</span>
+                                </div>
+                                <div class="functional-buttons clearfix">
+                                    <span class="button ajax_add_to_cart_button">Thêm nhanh</span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xxl-3">
+                    <div class="product-block">
+                        <div class="left-block">
+                            <a class="product_img_link text-center" href="../Detail/index.html"
+                                title="Bánh kem Flower Of Love">
+                                <img class="img-responsive" src="../img/banh7.webp" alt="Bánh kem Flower Of Love"
+                                    width="250" height="250" /></a>
+                            <span class="quick-view btn-tooltip"><i class="fa fa-eye"></i></span>
+                            <span class="label-new label">Mới</span>
+                        </div>
+                        <div class="right-block">
+                            <div class="product-meta">
+                                <h5 class="name">
+                                    <span class="product-name">Bánh Kem Endless Love</span>
+                                </h5>
+                                <div class="comments_note product-rating clearfix">
+                                    <div class="star_content">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                                <div class="content_price">
+                                    <span class="price product-price">380.00.000₫
+                                    </span>
+                                    <span class="old-price product-price">385.000₫</span>
+                                    <span class="price-percent-reduction">6%</span>
+                                </div>
+                                <div class="functional-buttons clearfix">
+                                    <span class="button ajax_add_to_cart_button">Thêm nhanh</span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xxl-3">
+                    <div class="product-block">
+                        <div class="left-block">
+                            <a class="product_img_link text-center" href="../Detail/index.html"
+                                title="Bánh Kem LiLy Garden">
+                                <img class="img-responsive" src="../img/banh8.webp" alt="Affiliates banner 300x250"
+                                    width="250" height="250" /></a>
+                            <span class="quick-view btn-tooltip"><i class="fa fa-eye"></i></span>
+                            <span class="label-new label">Mới</span>
+                        </div>
+                        <div class="right-block">
+                            <div class="product-meta">
+                                <h5 class="name">
+                                    <span class="product-name">Bánh kem Kiss me more</span>
+                                </h5>
+                                <div class="comments_note product-rating clearfix">
+                                    <div class="star_content">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                                <div class="content_price">
+                                    <span class="price product-price">370.000₫
+                                    </span>
+                                    <span class="old-price product-price">390.00₫</span>
+                                    <span class="price-percent-reduction">5%</span>
+                                </div>
+                                <div class="functional-buttons clearfix">
+                                    <span class="button ajax_add_to_cart_button">Thêm nhanh</span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xxl-3">
+                    <div class="product-block">
+                        <div class="left-block">
+                            <a class="product_img_link text-center" href="../Detail/index.html"
+                                title="Bánh kem Flower Of Love">
+                                <img class="img-responsive" src="../img/banh2.webp" alt="Bánh kem Flower Of Love"
+                                    width="250" height="250" /></a>
+                            <span class="quick-view btn-tooltip"><i class="fa fa-eye"></i></span>
+                            <span class="label-new label">Mới</span>
+                        </div>
+                        <div class="right-block">
+                            <div class="product-meta">
+                                <h5 class="name">
+                                    <span class="product-name">Bánh Kem Endless Love</span>
+                                </h5>
+                                <div class="comments_note product-rating clearfix">
+                                    <div class="star_content">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                                <div class="content_price">
+                                    <span class="price product-price">380.00.000₫
+                                    </span>
+                                    <span class="old-price product-price">385.000₫</span>
+                                    <span class="price-percent-reduction">6%</span>
+                                </div>
+                                <div class="functional-buttons clearfix">
+                                    <span class="button ajax_add_to_cart_button">Thêm nhanh</span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="btn-gotop" class="d-flex justify-content-center align-items-center btn-gotop">
+        <button><i class="fa-solid fa-chevron-up"></i></button>
+    </div>
+
+    <footer class="text-center text-lg-start bg-body-tertiary text-muted border-md-top-2">
+        <section class="">
+            <div class="container text-center text-md-start">
+                <div class="row pb-lg-5 pb-xl-2 py-xxl-5">
+                    <div class="bottom-logo col-md-6 col-lg-6 col-xxl-3 mx-auto mb-5 text-lg-center mb-lg-5">
+                        <div class="text-uppercase fw-bold mb-4 mb-xl-0 mb-lg-0 d-flex justify-content-center">
+                            <img src="../img/white-logo.png" alt="logo" width="120" height="150"
+                                class="logo-bottom text-center">
+                        </div>
+                        <p class="fw-bold text-center">
+                            Công Ty Cổ Phần Dịch Vụ Thương Mại Bánh DuyBakery
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 col-xxl-2 mx-auto mb-5">
+                        <h6 class="text-uppercase fw-bold mb-3 pb-3  border-bottom border-1">
+                            Về chúng tôi
+                        </h6>
+                        <p>
+                            <span href="#!" class="text-reset">Giới thiệu về DuyBakery</span>
+                        </p>
+                        <p>
+                            <span href="#!" class="text-reset">Danh sách cửa hàng</span>
+                        </p>
+                        <p>
+                            <span href="#!" class="text-reset">Quản lí chất lượng</span>
+                        </p>
+                        <p>
+                            <span href="#!" class="text-reset">Chính sách bảo mật</span>
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 col-xxl-2 mx-auto mb-5">
+                        <h6 class="text-uppercase fw-bold mb-3 pb-3 border-bottom border-1">
+                            Hỗ trợ khách hàng
+                        </h6>
+                        <p>
+                            <aspan href="#!" class="text-reset">Trung tâm hỗ trợ</aspan>
+                        </p>
+                        <p>
+                            <span href="#!" class="text-reset">Giao hàng </span>
+                        </p>
+                        <p>
+                            <span href="#!" class="text-reset">Thanh toán</span>
+                        </p>
+                        <p>
+                            <span href="#!" class="text-reset">Đổi trả</span>
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 col-xxl-2 mx-auto mb-md-0 mb-5">
+
+                        <h6 class="text-uppercase fw-bold mb-3 pb-3 border-bottom border-1">Liên hệ</h6>
+                        <p><i class="fas fa-home me-1"></i>3A Phú Mỹ Hưng, quận 7, Hồ Chí Minh, Việt Nam</p>
+                        <p style="white-space: nowrap;">
+                            <i class="fas fa-envelope me-1"></i>
+                            duybakery@gmail.com
+                        </p>
+                        <p><i class="fas fa-phone me-1"></i> +8496 999 999</p>
+                        <p><i class="fas fa-print me-1"></i> +8419 999 999 </p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 col-xxl-3 mx-auto mb-md-0 mb-5">
+                        <h6 class="text-uppercase fw-bold mb-3 pb-3 border-bottom border-1">Phản hồi</h6>
+                        <input type="text" class="form-control mb-4 text-center" placeholder="Email"
+                            aria-label="Username" aria-describedby="basic-addon1" style="border-radius: 2px;">
+                        <button type="button" class="btn fw-bold text-white mb-4 w-100 text-uppercase"
+                            style="background-color: #ff6924; border-radius: 2px; font-family: 'Times New Roman';">Submit<i
+                                class="fas fa-arrow-right ms-2"></i></button>
+                        <div class="d-md-flex justify-content-md-center">
+                            <a style="text-decoration: none;" href="" class="mx-2 link-secondary">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a style="text-decoration: none;" href="" class="mx-2 link-secondary">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a style="text-decoration: none;" href="" class="mx-2 link-secondary">
+                                <i class="fab fa-google"></i>
+                            </a>
+                            <a style="text-decoration: none;" href="" class="mx-2 link-secondary">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a style="text-decoration: none;" href="" class="mx-2 link-secondary">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a style="text-decoration: none;" href="" class="mx-2 link-secondary">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2023 Copyright by
+            <span class="text-reset fw-bold" href="https://mdbootstrap.com/">DuyBakery</span>
+        </div>
+    </footer>
+
+
+    <script src="https://kit.fontawesome.com/1c2be09150.js" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootst
+rap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+
+</html>

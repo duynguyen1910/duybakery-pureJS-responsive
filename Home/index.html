@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>DuyBakery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid text-white px-md-4 px-lg-5">
+            <div class="d-flex align-items-center gap-1 gap-md-4">
+                <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+                <a class="navbar-brand text-white" href="#">
+                    <img id="logo-nav" src="../img/logo-transparent.png" alt="logo" width="120" height="100"
+                        class="logo">
+                </a>
+            </div>
+            <div class="d-flex align-items-center gap-4 gap-md-4 d-lg-none">
+                <div class="search-default" type="submit">
+                    <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+                </div>
+                <a href="../Cart/index.html" class="cart-user"><i class="fas fa-shopping-cart "></i>
+                    <div class="item-cart">6</div>
+                </a>
+                <i class="fa-solid fa-circle-user    fa-xl me-2"></i>
+            </div>
+            <div class="collapse navbar-collapse text-white pb-3 pb-lg-0" id="navbarNavDropdown">
+                <ul class="navbar-nav fw-bold d-lg-flex justify-content-lg-between align-items-lg-center w-100 ">
+                    <ul class="d-lg-flex align-items-lg-center">
+                        <li class="mx-xxl-2">
+                            <a class="nav-link active text-white mx-2" aria-current="page" href="#">Sản phẩm</a>
+                        </li>
+                        <li class="nav-item dropdown d-flex justify-content-between mx-xxl-2">
+                            <a class="nav-link text-white mx-2" href="#">Giới thiệu</a>
+                        </li>
+                        <li class="nav-item dropdown d-flex justify-content-between mx-xxl-2">
+                            <a class="nav-link text-white mx-2" href="#">Bài viết</a>
+                        </li>
+                        <li class="nav-item dropdown d-flex justify-content-between mx-xxl-2">
+                            <a class="nav-link text-white mx-2 dropdown-toggle" href="#">Phản hồi</a>
+                        </li>
+                        <li class="nav-item dropdown d-flex justify-content-between mx-xxl-2">
+                            <a class="nav-link text-white dropdown-toggle mx-2" href="#">CSKH</a>
+                        </li>
+                        <li class="mx-xxl-2">
+                            <a class="nav-link text-white mx-2" href="#">Về chúng tôi</a>
+                        </li>
+                    </ul>
+            </div>
+            <div class="d-flex align-items-center d-none d-lg-flex gap-4">
+                <div class="search-default d-xxl-none" type="submit" class="d-xxl-none">
+                    <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+                </div>
+                <div class="search d-none d-xxl-flex">
+                    <input type="text" class="searchTerm" placeholder="Nhập từ khóa ...">
+                    <i class="fa fa-search fa-lg search-term-icon" aria-hidden="true"></i>
+                </div>
+                <a href="../Cart/index.html" class="cart-user "><i class="fas fa-shopping-cart "></i>
+                    <div class="item-cart">6</div>
+                </a>
+                <i class="fa-solid fa-circle-user user-circle fa-xl"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../img/carousel2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-caption d-none d-md-flex text-start flex-column justify-content-center align-items-start h-100"
+                style="top: 0">
+                <span class="h1-carousel edit1 caption-left hidden1 text-start">Sự tươi mới là đặc sản của chúng
+                    tôi</span>
+                <div class="carousel-interact text-center caption-left hidden1">
+                    <p class="text-start my-3" style="color: rgba(249,249,249,.6);">
+                        Những chiếc bánh thơm ngon của chúng tôi đang chờ bạn <br />
+                        Chúng tôi là những người thợ làm bánh lấy cảm hứng từ thiên nhiên còn bánh cho mọi người, bánh
+                        cho mọi dịp
+                    </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../img/carousel4.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-caption d-none d-md-flex text-start flex-column justify-content-center h-100"
+                style="top: 0">
+                <span class="h1-carousel edit1 caption-top hidden">Được làm từ những nguyên liệu tốt nhất</span>
+                <div class="carousel-interact text-center caption-bottom hidden mt-xl-5">
+                    <p class="text-center mt-5 mb-xl-3 py-xxl-0" style="color: rgba(249,249,249,.6);">
+                        Điều gì đã làm nên thương hiệu của Duy Bakery trên thị trường trong nước và quốc tế
+                    </p>
+                    <button class="">Xem thêm</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../img/carousel3.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-caption d-none d-md-flex text-start flex-column justify-content-center align-items-end h-100"
+                style="top: 0">
+                <span class="h1-carousel edit1 caption-right hidden2 text-end">Mẫu bánh mới 2023</span>
+                <div class="carousel-interact text-end caption-right hidden2">
+                    <p class="text-end mt-lg-2 " style="color: rgba(249,249,249,.6);">
+                        Đến với DuyBakery, bạn có thể thưởng thức các loại bánh tươi cao cấp như bánh kem, bánh sinh
+                        nhật,
+                        bánh Noel, bánh cưới, bánh trung thu, các loại bánh mì và bánh nướng.
+                    </p>
+                    <button class="text-end" style="text-align: end !important;">Xem tất cả</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../img/carousel1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-caption d-none d-md-flex text-start flex-column justify-content-center h-100"
+                style="top: 0">
+                <div class="h1-carousel f-flex justify-content-between align-items-center edit1 caption-left hidden1">
+                    <span style="font-size: 50px;" class="">+70</span>/<span style="font-size: 20px;">Năm hoạt
+                        động</span>
+                    <i class="fa fa-birthday-cake fa-2xl mx-2" aria-hidden="true"></i>
+                    <span style="font-size: 50px;">+150</span>/<span style="font-size: 20px;">Loại bánh</span>
+                </div>
+                <div class="carousel-interact text-center caption-right hidden2 mt-2 mt-lg-3 mt-xl-5">
+                    <p class="text-center mb-xl-3" style="color: rgba(249,249,249,.6);">
+                        DuyBakery là một thương hiệu bánh danh tiếng của Sài Gòn với bề dày lịch sử hơn 70 năm. Ra đời
+                        vào
+                        đầu những năm thập niên 50 bởi một ông chủ tên là Nguyễn Tấn Duy thực sự mang
+                        nét tao nhã, tinh tế của nền văn hóa ẩm thực Pháp, làm đắm say biết bao thế hệ những người tiêu
+                        dùng Việt.
+                    </p>
+                    <button class="">Xem thêm</button>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="wrapper-categories p-3 py-sm-5 px-xl-5">
+        <div class="title pb-3"><span class="orange-text">Ưu Đãi</span> Dành Cho Bạn</div>
+        <div class="desc-title text-center mb-3 mb-sm-5 text-start text-lg-start">Những chiếc bánh mì chất lượng,
+            được làm bằng tình yêu
+            thương.
+            <br />
+            <span class="d-none d-lg-block text-center text-start text-lg-start">Mùi hương thơm ngát của bánh ngọt
+                khiến bạn không thể cưỡng
+                lại.</span>
+        </div>
+        <div class="offer d-flex flex-column px-sm-5 flex-md-row px-md-0 justify-content-lg-between">
+            <div class="offer-item mb-3 p-3 py-sm-3 px-sm-5 mb-sm-5 p-md-3 me-md-4 mb-md-4 me-lg-0">
+                <div class="title-offer">
+                    Giảm 10% cho bánh Trung Thu
+                </div>
+                <div class="desc-title">
+                    Mua các loại bánh vào dịp Trung Thu chúng tôi giảm với mức giá chiếc khấu.
+                </div>
+                <div class="offer-button">
+                    <button>Mua ngay</button>
+                    <img src="../img/banh-trung-thu.png" alt="" width="160" height="160">
+                </div>
+            </div>
+            <div class="offer-item mb-3 p-3 py-sm-3 px-sm-5 mb-sm-5 p-md-3 mb-md-4">
+                <div class="title-offer">
+                    Freeship nội thành khi mua trên 2 sản phẩm
+                </div>
+                <div class="desc-title">
+                    Mua các loại bánh vào dịp này chúng tôi miễn phí ship nội thành Hồ Chí Minh.
+                </div>
+                <div class="offer-button">
+                    <button>Mua ngay </button>
+                    <img src="../img/site1.png" alt="" width="160" height="160">
+                </div>
+            </div>
+            <div class="offer-item mb-3 p-3 py-sm-3 px-sm-5 mb-sm-5 p-md-3 mb-md-4">
+                <div class="title-offer">
+                    Nhận ngay voucher 15%
+                </div>
+                <div class="desc-title">
+                    Ưu đãi nhiều loại voucher cho khách hàng của DuyBakery và mua trực tiếp tại cửa
+                    hàng.
+                </div>
+                <div class="offer-button">
+                    <button>Mua ngay </button>
+                    <img src="../img/site2.png" alt="" width="160" height="160">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-3 py-sm-5 px-xl-5">
+        <div class="title-center pb-3"><span class="orange-text">Dạnh Mục</span> Chúng Tôi</div>
+        <div class="desc-title text-center mb-3 mb-sm-5">
+            “Mình tôn trọng khách hàng thì khách hàng không phụ mình.” <br />
+            <span class="d-none d-md-block">
+                "Thành công của những thợ làm bánh xuất phát từ đôi bàn tay vàng cùng khối óc sáng tạo và trái tim
+                đầy
+                nhiệt
+                huyết."
+            </span>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row gy-4">
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 " role="button">
+                    <div class="cate-item py-5 ">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img src="../img/cate1.png" alt="" width="56">
+                        </div>
+                        <div class="cate-title text-center text-white fw-bold">Cakes</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2" role="button">
+                    <div class="cate-item py-5  ">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img src="../img/cate2.png" alt="" width="56">
+                        </div>
+                        <div class="cate-title text-center text-white fw-bold">Desserts</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2" role="button">
+                    <div class="cate-item py-5  ">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img src="../img/cate3.png" alt="" width="56">
+                        </div>
+                        <div class="cate-title text-center text-white fw-bold">Black Forest</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2" role="button">
+                    <div class="cate-item py-5  ">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img src="../img/cate4.png" alt="" width="56">
+                        </div>
+                        <div class="cate-title text-center text-white fw-bold">Cheese</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2" role="button">
+                    <div class="cate-item py-5  ">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img src="../img/cate5.png" alt="" width="56">
+                        </div>
+                        <div class="cate-title text-center text-white fw-bold">Chocolate</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2" role="button">
+                    <div class="cate-item py-5  ">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img src="../img/cate6.png" alt="" width="56">
+                        </div>
+                        <div class="cate-title text-center text-white fw-bold">Cheesecake</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2" role="button">
+                    <div class="cate-item py-5  ">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img src="../img/cate7.png" alt="" width="56">
+                        </div>
+                        <div class="cate-title text-center text-white fw-bold">Pavlova</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2" role="button">
+                    <div class="cate-item py-5  ">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img src="../img/cate8.png" alt="" width="56">
+                        </div>
+                        <div class="cate-title text-center text-white fw-bold">Gateau</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2" role="button">
+                    <div class="cate-item py-5  ">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img src="../img/cate9.png" alt="" width="56">
+                        </div>
+                        <div class="cate-title text-center text-white fw-bold">Macaron</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2" role="button">
+                    <div class="cate-item py-5  ">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img src="../img/cate10.png" alt="" width="56">
+                        </div>
+                        <div class="cate-title text-center text-white fw-bold">Donut</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2" role="button">
+                    <div class="cate-item py-5  ">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img src="../img/cate11.png" alt="" width="56">
+                        </div>
+                        <div class="cate-title text-center text-white fw-bold">Su Kem</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2" role="button">
+                    <div class="cate-item py-5  ">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img src="../img/cate12.png" alt="" width="56">
+                        </div>
+                        <div class="cate-title text-center text-white fw-bold">Dango</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-3 py-sm-5 px-xl-5" style="background-color: #f1f1f1;">
+        <div class="title-center pb-3"><span class="orange-text">Sản Phẩm</span> Nổi Bật</div>
+        <div class="desc-title text-center mb-3 mb-sm-5 h-auto">
+            <span class="d-none d-md-block">
+                “Sáng tạo, kiên trì và chăm chỉ là những yếu tố tạo nên sự thành công của người thợ làm bánh”
+                – Pierre Hermé – <br />
+            </span>
+            Chúng tôi hiểu tầm quan trọng của việc tiếp cận từng công việc một cách toàn diện và tin tưởng vào sức
+            mạnh của
+            giao tiếp đơn giản và dễ dàng.
+
+        </div>
+        <div class="container-fluid">
+            <div class="row px-2 px-sm-0 px-md-5 px-lg-4 px-xl-5 gy-5 gx-md-5 gy-md-5 gy-sm-4">
+                <div class="col-sm-6 col-lg-4 col-xxl-3">
+                    <div class="product-block">
+                        <div class="left-block">
+                            <a class="product_img_link text-center text-sm-start" href="../Detail/index.html"
+                                title="Bánh Chocolate">
+                                <img class="img-responsive" src="../img/banh1.webp" alt="Affiliates banner 300x250"
+                                    width="250" height="250" /></a>
+                            <span class="quick-view btn-tooltip"><i class="fa fa-eye"></i></span>
+                            <span class="label-new label">Mới</span>
+                        </div>
+                        <div class="right-block">
+                            <div class="product-meta">
+                                <h5 class="name">
+                                    <span class="product-name">Bánh Chocolate</span>
+                                </h5>
+                                <div class="comments_note product-rating clearfix">
+                                    <div class="star_content">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                                <div class="content_price">
+                                    <span class="price product-price">70.500₫
+                                    </span>
+                                    <span class="old-price product-price">80.500₫</span>
+                                    <span class="price-percent-reduction">5%</span>
+                                </div>
+                                <div class="functional-buttons clearfix">
+                                    <span class="button ajax_add_to_cart_button">Thêm nhanh</span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xxl-3">
+                    <div class="product-block">
+                        <div class="left-block">
+                            <a class="product_img_link text-center" href="../Detail/index.html"
+                                title="Bánh kem Flower Of Love">
+                                <img class="img-responsive" src="../img/banh3.webp" alt="Bánh kem Flower Of Love"
+                                    width="250" height="250" /></a>
+                            <span class="quick-view btn-tooltip"><i class="fa fa-eye"></i></span>
+                            <span class="label-new label">Mới</span>
+                        </div>
+                        <div class="right-block">
+                            <div class="product-meta">
+                                <h5 class="name">
+                                    <span class="product-name">Bánh kem Flower Of Love</span>
+                                </h5>
+                                <div class="comments_note product-rating clearfix">
+                                    <div class="star_content">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                                <div class="content_price">
+                                    <span class="price product-price">100.000₫
+                                    </span>
+                                    <span class="old-price product-price">98.000₫</span>
+                                    <span class="price-percent-reduction">1%</span>
+                                </div>
+                                <div class="functional-buttons clearfix">
+                                    <span class="button ajax_add_to_cart_button">Thêm nhanh</span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xxl-3">
+                    <div class="product-block">
+                        <div class="left-block">
+                            <a class="product_img_link text-center" href="../Detail/index.html"
+                                title="Bánh Kem LiLy Garden">
+                                <img class="img-responsive" src="../img/banh4.webp" alt="Affiliates banner 300x250"
+                                    width="250" height="250" /></a>
+                            <span class="quick-view btn-tooltip"><i class="fa fa-eye"></i></span>
+                            <span class="label-new label">Mới</span>
+                        </div>
+                        <div class="right-block">
+                            <div class="product-meta">
+                                <h5 class="name">
+                                    <span class="product-name">Bánh Kem LiLy Garden</span>
+                                </h5>
+                                <div class="comments_note product-rating clearfix">
+                                    <div class="star_content">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                                <div class="content_price">
+                                    <span class="price product-price">70.500₫
+                                    </span>
+                                    <span class="old-price product-price">80.500₫</span>
+                                    <span class="price-percent-reduction">5%</span>
+                                </div>
+                                <div class="functional-buttons clearfix">
+                                    <span class="button ajax_add_to_cart_button">Thêm nhanh</span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xxl-3">
+                    <div class="product-block">
+                        <div class="left-block">
+                            <a class="product_img_link text-center" href="../Detail/index.html" title="Bánh Chocolate">
+                                <img class="img-responsive" src="../img/banh5.webp" alt="Affiliates banner 300x250"
+                                    width="250" height="250" /></a>
+                            <span class="quick-view btn-tooltip"><i class="fa fa-eye"></i></span>
+                            <span class="label-new label">Mới</span>
+                        </div>
+                        <div class="right-block">
+                            <div class="product-meta">
+                                <h5 class="name">
+                                    <span class="product-name">Bánh Kem Chocolate Lover </span>
+                                </h5>
+                                <div class="comments_note product-rating clearfix">
+                                    <div class="star_content">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                                <div class="content_price">
+                                    <span class="price product-price">380.000₫
+                                    </span>
+                                    <span class="old-price product-price">400.00₫</span>
+                                    <span class="price-percent-reduction">10%</span>
+                                </div>
+                                <div class="functional-buttons clearfix">
+                                    <span class="button ajax_add_to_cart_button">Thêm nhanh</span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xxl-3">
+                    <div class="product-block">
+                        <div class="left-block">
+                            <a class="product_img_link text-center" href="../Detail/index.html" title="Bánh Flutter">
+                                <img class="img-responsive" src="../img/banh18.webp" alt="Affiliates banner 300x250"
+                                    width="250" height="250" /></a>
+                            <span class="quick-view btn-tooltip"><i class="fa fa-eye"></i></span>
+                            <span class="label-new label">Mới</span>
+                        </div>
+                        <div class="right-block">
+                            <div class="product-meta">
+                                <h5 class="name">
+                                    <span class="product-name">Bánh Kem Rosie Love</span>
+                                </h5>
+                                <div class="comments_note product-rating clearfix">
+                                    <div class="star_content">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                                <div class="content_price">
+                                    <span class="price product-price">380.000₫
+                                    </span>
+                                    <span class="old-price product-price">390.00₫</span>
+                                    <span class="price-percent-reduction">7.5%</span>
+                                </div>
+                                <div class="functional-buttons clearfix">
+                                    <span class="button ajax_add_to_cart_button">Thêm nhanh</span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xxl-3">
+                    <div class="product-block">
+                        <div class="left-block">
+                            <a class="product_img_link text-center" href="../Detail/index.html"
+                                title="Bánh kem Flower Of Love">
+                                <img class="img-responsive" src="../img/banh7.webp" alt="Bánh kem Flower Of Love"
+                                    width="250" height="250" /></a>
+                            <span class="quick-view btn-tooltip"><i class="fa fa-eye"></i></span>
+                            <span class="label-new label">Mới</span>
+                        </div>
+                        <div class="right-block">
+                            <div class="product-meta">
+                                <h5 class="name">
+                                    <span class="product-name">Bánh Kem Endless Love</span>
+                                </h5>
+                                <div class="comments_note product-rating clearfix">
+                                    <div class="star_content">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                                <div class="content_price">
+                                    <span class="price product-price">380.00.000₫
+                                    </span>
+                                    <span class="old-price product-price">385.000₫</span>
+                                    <span class="price-percent-reduction">6%</span>
+                                </div>
+                                <div class="functional-buttons clearfix">
+                                    <span class="button ajax_add_to_cart_button">Thêm nhanh</span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xxl-3">
+                    <div class="product-block">
+                        <div class="left-block">
+                            <a class="product_img_link text-center" href="../Detail/index.html"
+                                title="Bánh Kem LiLy Garden">
+                                <img class="img-responsive" src="../img/banh8.webp" alt="Affiliates banner 300x250"
+                                    width="250" height="250" /></a>
+                            <span class="quick-view btn-tooltip"><i class="fa fa-eye"></i></span>
+                            <span class="label-new label">Mới</span>
+                        </div>
+                        <div class="right-block">
+                            <div class="product-meta">
+                                <h5 class="name">
+                                    <span class="product-name">Bánh kem Kiss me more</span>
+                                </h5>
+                                <div class="comments_note product-rating clearfix">
+                                    <div class="star_content">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                                <div class="content_price">
+                                    <span class="price product-price">370.000₫
+                                    </span>
+                                    <span class="old-price product-price">390.00₫</span>
+                                    <span class="price-percent-reduction">5%</span>
+                                </div>
+                                <div class="functional-buttons clearfix">
+                                    <span class="button ajax_add_to_cart_button">Thêm nhanh</span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xxl-3">
+                    <div class="product-block">
+                        <div class="left-block">
+                            <a class="product_img_link text-center" href="../Detail/index.html"
+                                title="Bánh kem Flower Of Love">
+                                <img class="img-responsive" src="../img/banh2.webp" alt="Bánh kem Flower Of Love"
+                                    width="250" height="250" /></a>
+                            <span class="quick-view btn-tooltip"><i class="fa fa-eye"></i></span>
+                            <span class="label-new label">Mới</span>
+                        </div>
+                        <div class="right-block">
+                            <div class="product-meta">
+                                <h5 class="name">
+                                    <span class="product-name">Bánh Kem Endless Love</span>
+                                </h5>
+                                <div class="comments_note product-rating clearfix">
+                                    <div class="star_content">
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                        <i class="fas fa-star star"></i>
+                                    </div>
+                                </div>
+                                <div class="content_price">
+                                    <span class="price product-price">380.00.000₫
+                                    </span>
+                                    <span class="old-price product-price">385.000₫</span>
+                                    <span class="price-percent-reduction">6%</span>
+                                </div>
+                                <div class="functional-buttons clearfix">
+                                    <span class="button ajax_add_to_cart_button">Thêm nhanh</span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="btn-tooltip addToWishlist">
+                                        <i class="fa fa-comment" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ceo-wrapper p-3 py-sm-5 px-xl-5 bg-white d-flex flex-column flex-lg-row align-items-lg-center">
+        <img src="../img/avt-founder.jpg" alt="" width="370" height="600" class="ceo-img d-none d-lg-block me-lg-5">
+        <div class="saying-content">
+            <div class="title-center"><span class="orange-text">CEO / Founder</span> của DuyBakery đã nói gì?</div>
+            <span class="desc-title" style="line-height: 30px;">
+                Tôi xin chân thành cảm ơn những khách hàng thân yêu dù ở xa hay gần đã tin tưởng và ủng hộ
+                DuyBakery trong suốt thời gian vừa qua. Sự hài lòng của khách hàng chính là nguồn động lực cho chúng tôi
+                không ngừng
+                tạo nên những sản phẩm Độc Đáo, Bắt Mắt và Chất Lượng nhất.<br />
+                DuyBakery to Thank you & love ❤️
+            </span>
+            <div class="d-flex justify-content-end mt-2 mt-xxl-5 justify-content-lg-center">
+                <div class="ceo-text d-flex justify-content-between align-items-center fw-bold">
+                    <span><span>Nguyễn Tấn Duy</span> <br>
+                        <div class="ceo-desc">CEO / Founder</div>
+                    </span>
+                    <img src="../img/zyro-image.png" alt="" width="100">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-3 py-sm-5" style="background-color: #f1f1f1;">
+        <div class="title-center pb-3">Tin Tức & Blog <span class="orange-text">Mới Nhất</span></div>
+        <div class="desc-title text-center mb-3 mb-sm-5 h-auto">
+            Theo dõi tin tức và suy nghĩ mới nhất của chúng tôi, tập trung hoàn toàn vào các cập nhật về thiết kế
+            quy trình, an toàn thực phẩm của bánh.
+        </div>
+        <div class="container-fluid container-lg text-center my-3">
+            <div class="row mx-auto my-auto justify-content-center">
+                <div id="carousel2" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active" data-bs-interval="4000">
+                            <div class="col-md-6 col-xl-4">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="../img/blog4.jpg" height="250" class="img-fluid w-100">
+                                    </div>
+                                    <div class="blog-content-bottom">
+                                        <div class="blog-time">
+                                            <div>
+                                                <i class="fa fa-book blog-icon" aria-hidden="true"></i>
+                                                James
+                                            </div>
+                                            <div>
+                                                <i class="fa fa-calendar blog-icon" aria-hidden="true"></i>
+                                                December 14, 2023
+                                            </div>
+                                        </div>
+                                        <div class="blog-title text-start d-flex flex-column">
+                                            <p>Chất liệu làm bánh luôn đảm bảo chất lượng</p>
+                                        </div>
+                                        <div class="blog-button text-start">
+                                            <button>Xem thêm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="4000">
+                            <div class="col-md-6 col-xl-4">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="../img/blog2.jpg" height="250" class="img-fluid w-100">
+                                    </div>
+                                    <div class="blog-content-bottom">
+                                        <div class="blog-time">
+                                            <div>
+                                                <i class="fa fa-book blog-icon" aria-hidden="true"></i>
+                                                Thành Đạt
+                                            </div>
+                                            <div>
+                                                <i class="fa fa-calendar blog-icon" aria-hidden="true"></i>
+                                                March 20, 2023
+                                            </div>
+                                        </div>
+                                        <div class="blog-title text-start d-flex flex-column">
+                                            <p> Những nguyên liệu đầu tiên trong quy trình sản xuất bánh</p>
+                                        </div>
+                                        <div class="blog-button text-start">
+                                            <button>Xem thêm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="4000">
+                            <div class="col-md-6 col-xl-4">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="../img/blog3.jpg" height="250" class="img-fluid w-100">
+                                    </div>
+                                    <div class="blog-content-bottom">
+                                        <div class="blog-time">
+                                            <div>
+                                                <i class="fa fa-book blog-icon" aria-hidden="true"></i>
+                                                Nguyễn Duy
+                                            </div>
+                                            <div>
+                                                <i class="fa fa-calendar blog-icon" aria-hidden="true"></i>
+                                                January 01, 2023
+                                            </div>
+                                        </div>
+                                        <div class="blog-title text-start d-flex flex-column">
+                                            <p>
+                                                Bởi vì mỗi món bánh đều có một câu chuyện
+                                            </p>
+                                        </div>
+                                        <div class="blog-button text-start">
+                                            <button>Xem thêm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="4000">
+                            <div class="col-md-6 col-xl-4">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="../img/blog5.jpg" height="250" class="img-fluid w-100">
+                                    </div>
+                                    <div class="blog-content-bottom">
+                                        <div class="blog-time">
+                                            <div>
+                                                <i class="fa fa-book blog-icon" aria-hidden="true"></i>
+                                                Chí Thành
+                                            </div>
+                                            <div>
+                                                <i class="fa fa-calendar blog-icon" aria-hidden="true"></i>
+                                                March 20, 2023
+                                            </div>
+                                        </div>
+                                        <div class="blog-title text-start d-flex flex-column">
+                                            <p>
+                                                Thời gian thực hiện nhanh chóng, đúng quy trình
+                                            </p>
+                                        </div>
+                                        <div class="blog-button text-start">
+                                            <button>Xem thêm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="4000">
+                            <div class="col-md-6 col-xl-4">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="../img/blog6.jpg" height="250" class="img-fluid w-100">
+                                    </div>
+                                    <div class="blog-content-bottom">
+                                        <div class="blog-time">
+                                            <div>
+                                                <i class="fa fa-book blog-icon" aria-hidden="true"></i>
+                                                James
+                                            </div>
+                                            <div>
+                                                <i class="fa fa-calendar blog-icon" aria-hidden="true"></i>
+                                                December 14, 2023
+                                            </div>
+                                        </div>
+                                        <div class="blog-title text-start d-flex flex-column">
+                                            <p>
+                                                Chất liệu làm bánh luôn đảm bảo chất lượng
+                                            </p>
+                                        </div>
+                                        <div class="blog-button text-start">
+                                            <button>Xem thêm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="4000">
+                            <div class="col-md-6 col-xl-4">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="../img/blog7.jpg" height="250" class="img-fluid w-100">
+                                    </div>
+                                    <div class="blog-content-bottom">
+                                        <div class="blog-time">
+                                            <div>
+                                                <i class="fa fa-book blog-icon" aria-hidden="true"></i>
+                                                Minh Trung
+                                            </div>
+                                            <div>
+                                                <i class="fa fa-calendar blog-icon" aria-hidden="true"></i>
+                                                April 07, 2023
+                                            </div>
+                                        </div>
+                                        <div class="blog-title text-start d-flex flex-column">
+                                            <p>
+                                                Mỗi chiếc bánh là mỗi câu chuyện
+                                            </p>
+                                        </div>
+                                        <div class="blog-button text-start">
+                                            <button>Xem thêm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="4000">
+                            <div class="col-md-6 col-xl-4">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="../img/blog8.jpg" height="250" class="img-fluid w-100">
+                                    </div>
+                                    <div class="blog-content-bottom">
+                                        <div class="blog-time">
+                                            <div>
+                                                <i class="fa fa-book blog-icon" aria-hidden="true"></i>
+                                                Thành Đạt
+                                            </div>
+                                            <div>
+                                                <i class="fa fa-calendar blog-icon" aria-hidden="true"></i>
+                                                March 08, 2023
+                                            </div>
+                                        </div>
+                                        <div class="blog-title text-start d-flex flex-column">
+                                            <p>
+                                                Quy trình tạo theo từng bước rõ ràng
+                                            </p>
+                                        </div>
+                                        <div class="blog-button text-start">
+                                            <button>Xem thêm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="4000">
+                            <div class="col-md-6 col-xl-4">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="../img/blog9.jpg" height="250" class="img-fluid w-100">
+                                    </div>
+                                    <div class="blog-content-bottom">
+                                        <div class="blog-time">
+                                            <div>
+                                                <i class="fa fa-book blog-icon" aria-hidden="true"></i>
+                                                King Stone
+                                            </div>
+                                            <div>
+                                                <i class="fa fa-calendar blog-icon" aria-hidden="true"></i>
+                                                October 10, 2023
+                                            </div>
+                                        </div>
+                                        <div class="blog-title text-start d-flex flex-column">
+                                            <p> Kiểm định chất lượng sản phẩm từ Bộ Thực Phẩm</p>
+                                        </div>
+                                        <div class="blog-button text-start">
+                                            <button>Xem thêm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="4000">
+                            <div class="col-md-6 col-xl-4">
+                                <div class="card">
+                                    <div class="card-img">
+                                        <img src="../img/blog3.jpg" height="250" class="img-fluid w-100">
+                                    </div>
+                                    <div class="blog-content-bottom">
+                                        <div class="blog-time">
+                                            <div>
+                                                <i class="fa fa-book blog-icon" aria-hidden="true"></i>
+                                                Nguyễn Duy
+                                            </div>
+                                            <div>
+                                                <i class="fa fa-calendar blog-icon" aria-hidden="true"></i>
+                                                January 01, 2023
+                                            </div>
+                                        </div>
+                                        <div class="blog-title text-start d-flex flex-column">
+                                            <p>Bởi vì mỗi món bánh đều có một câu chuyện</p>
+                                        </div>
+                                        <div class="blog-button text-start">
+                                            <button>Xem thêm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev bg-transparent" href="#carousel2" role="button"
+                        data-bs-slide="prev">
+                        <span style="color: #ff6924 !important;" class="carousel-control-prev-icon"
+                            aria-hidden="true"></span>
+                    </a>
+                    <a class="carousel-control-next bg-transparent" href="#carousel2" role="button"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="btn-gotop" class="d-flex justify-content-center align-items-center btn-gotop">
+        <button><i class="fa-solid fa-chevron-up"></i></button>
+    </div>
+
+    <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+        <section class="">
+            <div class="container text-center text-md-start">
+                <div class="row mb-3 py-xxl-5">
+                    <div class="bottom-logo col-md-6 col-lg-6 col-xxl-3 mx-auto mb-5 text-lg-center mb-lg-5">
+                        <div class="text-uppercase fw-bold mb-4 mb-xl-0 mb-lg-0 d-flex justify-content-center">
+                            <img src="../img/white-logo.png" alt="logo" width="120" height="150"
+                                class="logo-bottom text-center">
+                        </div>
+                        <p class="fw-bold text-center">
+                            Công Ty Cổ Phần Dịch Vụ Thương Mại Bánh DuyBakery
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 col-xxl-2 mx-auto mb-5">
+                        <h6 class="text-uppercase fw-bold mb-3 pb-3 border-bottom">
+                            Về chúng tôi
+                        </h6>
+                        <p>
+                            <span href="#!" class="text-reset">Giới thiệu về DuyBakery</span>
+                        </p>
+                        <p>
+                            <span href="#!" class="text-reset">Danh sách cửa hàng</span>
+                        </p>
+                        <p>
+                            <span href="#!" class="text-reset">Quản lí chất lượng</span>
+                        </p>
+                        <p>
+                            <span href="#!" class="text-reset">Chính sách bảo mật</span>
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 col-xxl-2 mx-auto mb-5">
+                        <h6 class="text-uppercase fw-bold mb-3 pb-3 border-bottom">
+                            Hỗ trợ khách hàng
+                        </h6>
+                        <p>
+                            <aspan href="#!" class="text-reset">Trung tâm hỗ trợ</aspan>
+                        </p>
+                        <p>
+                            <span href="#!" class="text-reset">Giao hàng </span>
+                        </p>
+                        <p>
+                            <span href="#!" class="text-reset">Thanh toán</span>
+                        </p>
+                        <p>
+                            <span href="#!" class="text-reset">Đổi trả</span>
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 col-xxl-2 mx-auto mb-md-0 mb-5">
+
+                        <h6 class="text-uppercase fw-bold mb-3 pb-3 border-bottom">Liên hệ</h6>
+                        <p><i class="fas fa-home me-1"></i>3A Phú Mỹ Hưng, quận 7, Hồ Chí Minh, Việt Nam</p>
+                        <p style="white-space: nowrap;">
+                            <i class="fas fa-envelope me-1"></i>
+                            duybakery@gmail.com
+                        </p>
+                        <p><i class="fas fa-phone me-1"></i> +8496 999 999</p>
+                        <p><i class="fas fa-print me-1"></i> +8419 999 999 </p>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 col-xxl-3 mx-auto mb-md-0 mb-5">
+                        <h6 class="text-uppercase fw-bold mb-3 pb-3 border-bottom">Phản hồi</h6>
+                        <input type="text" class="form-control mb-4 text-center" placeholder="Email"
+                            aria-label="Username" aria-describedby="basic-addon1" style="border-radius: 2px;">
+                        <button type="button" class="btn fw-bold text-white mb-4 w-100 text-uppercase"
+                            style="background-color: #ff6924; border-radius: 2px; font-family: 'Times New Roman';">Submit<i
+                                class="fas fa-arrow-right ms-2"></i></button>
+                        <div class="d-md-flex justify-content-md-center">
+                            <a style="text-decoration: none;" href="" class="mx-2 link-secondary">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a style="text-decoration: none;" href="" class="mx-2 link-secondary">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a style="text-decoration: none;" href="" class="mx-2 link-secondary">
+                                <i class="fab fa-google"></i>
+                            </a>
+                            <a style="text-decoration: none;" href="" class="mx-2 link-secondary">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a style="text-decoration: none;" href="" class="mx-2 link-secondary">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a style="text-decoration: none;" href="" class="mx-2 link-secondary">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2023 Copyright by
+            <span class="text-reset fw-bold" href="https://mdbootstrap.com/">DuyBakery</span>
+        </div>
+    </footer>
+
+
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+        integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1c2be09150.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
