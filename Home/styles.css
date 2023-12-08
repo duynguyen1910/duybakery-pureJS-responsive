@@ -961,8 +961,8 @@ li a {
     }
 
     .title {
-        text-align: start;
-        background-position: left center;
+        text-align: center;
+        background-position: center center;
         font-size: 48px;
     }
 
