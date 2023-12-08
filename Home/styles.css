@@ -309,7 +309,6 @@ li a {
     margin-right: 4px;
     -webkit-transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border: 1px solid #010148;
     cursor: pointer;
 }
 
@@ -603,6 +602,7 @@ li a {
     font-size: 14px;
     cursor: pointer;
     transition: 0.2s linear;
+    z-index: 1;
 }
 
 .blog-button button:hover {
@@ -785,6 +785,50 @@ li a {
     /* Di chuyển phần tử sang trái 100% để ẩn đi */
     opacity: 0;
     transition: .5s;
+}
+
+.christmas-icon {
+    width: 80px;
+    width: 80px;
+}
+
+
+.carousel-detail-btn {
+    padding: 9px 28px !important;
+    border: none;
+    color: #fff;
+    border-radius: 1px;
+    background-color: #ff6924;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s linear;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 7;
+}
+
+.carousel-detail {
+    z-index: 5;
+}
+
+.carousel-detail:hover .carousel-detail-btn {
+
+    transition: linear .2s;
+    top: 50%;
+    opacity: 1;
+}
+
+.carousel-detail-label {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-family: 'Signika', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    
 }
 
 @media screen and (min-width: 576px) {
@@ -1126,6 +1170,12 @@ li a {
         transition: 0.2s linear;
         cursor: pointer;
     }
+
+    .christmas-icon {
+        width: 120px;
+        width: 120px;
+    }
+
 }
 
 @media screen and (min-width: 1600px) {

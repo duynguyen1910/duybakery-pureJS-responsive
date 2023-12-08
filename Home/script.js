@@ -69,7 +69,7 @@ let currentItem, nextItem;
 document.addEventListener("DOMContentLoaded", (e) => {
   // console.log("AAAA", captions[0]);
   currentItem = captions[0];
-  
+
   currentItem.firstElementChild.classList.remove(hiddenClass1);
   currentItem.lastElementChild.classList.remove(hiddenClass1);
 });
@@ -90,12 +90,17 @@ TACarousel.addEventListener("slid.bs.carousel", (e) => {
 
   if (e.to == 2) {
     nextItem.firstElementChild.classList.remove(hiddenClass2);
-    nextItem.lastElementChild.classList.remove(hiddenClass2);
+    nextItem.lastElementChild.classList.remove(hiddenClass);
   }
 
   if (e.to == 3) {
     nextItem.firstElementChild.classList.remove(hiddenClass1);
     nextItem.lastElementChild.classList.remove(hiddenClass2);
+
+    if (!document.getElementById("year-carousel-caption").childNodes.length) {
+      animateValue("year-carousel-caption", 0, 74);
+      animateValue("cake-carousel-caption", 0, 150);
+    }
   }
 });
 
@@ -115,7 +120,7 @@ TACarousel.addEventListener("slide.bs.carousel", (e) => {
 
   if (e.from == 2) {
     currentItem.firstElementChild.classList.add(hiddenClass2);
-    currentItem.lastElementChild.classList.add(hiddenClass2);
+    currentItem.lastElementChild.classList.add(hiddenClass);
   }
 
   if (e.from == 3) {
@@ -123,3 +128,17 @@ TACarousel.addEventListener("slide.bs.carousel", (e) => {
     currentItem.lastElementChild.classList.add(hiddenClass2);
   }
 });
+
+const animateValue = (id, start, end) => {
+  if (start === end) return;
+  var current = start;
+  var increment = end > start ? 1 : -1;
+  var obj = document.getElementById(id);
+  var timer = setInterval(function () {
+    current += increment;
+    obj.innerHTML = current;
+    if (current == end) {
+      clearInterval(timer);
+    }
+  }, 0);
+};
