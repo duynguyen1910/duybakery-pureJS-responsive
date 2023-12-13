@@ -295,6 +295,7 @@ li a {
 }
 
 .product-block .btn-tooltip {
+    border: 1px solid #010148;
     display: inline-block;
     width: 36px;
     height: 36px;

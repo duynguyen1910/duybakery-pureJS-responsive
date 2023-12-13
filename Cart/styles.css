@@ -391,7 +391,7 @@ li a {
 
 .coupon input {
     background-color: transparent;
-    padding: 11px 0px 11px 8px;
+    padding: 11px 0px 11px 6px;
     font-size: inherit;
     line-height: inherit;
     font-weight: inherit;
@@ -521,6 +521,7 @@ li a {
 }
 
 .product-block .btn-tooltip {
+    border: 1px solid #010148;
     display: inline-block;
     width: 36px;
     height: 36px;
