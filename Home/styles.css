@@ -27,6 +27,8 @@ li a {
     -moz-transition: all ease-out .6s;
     -o-transition: all ease-out .6s;
     transition: all ease-out .6s;
+    width: 100px;
+    height: 90px;
 }
 
 .navbar {
@@ -61,6 +63,23 @@ li a {
     cursor: pointer;
 }
 
+.profile-icon {
+    position: relative;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.profile-icon:hover {
+    color: #ff6924 !important;
+}
+
+.profile-name {
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 2px;
+}
 
 
 .cart-user:hover {
@@ -829,12 +848,35 @@ li a {
     font-family: 'Signika', sans-serif;
     font-weight: bold;
     color: #fff;
-    
+
 }
+
+#dropdownMenuButton1 {
+    display: none;
+}
+
+.navbar-brand {
+    margin-right: 0rem;
+}
+
+
 
 @media screen and (min-width: 576px) {
     .card {
         margin: 0px 60px 40px 60px;
+    }
+
+    #dropdownMenuButton1 {
+        display: block;
+    }
+
+    #logo-nav {
+        width: 120px;
+        height: 100px;
+    }
+
+    .navbar-brand {
+        margin-right: 1rem;
     }
 }
 
@@ -948,6 +990,14 @@ li a {
         font-size: 14px;
         cursor: pointer;
         transition: 0.2s linear;
+    }
+
+    #dropdownMenuButton1 {
+        width: 260px;
+    }
+
+    .dropdown-menu {
+        width: 309px;
     }
 }
 
@@ -1211,4 +1261,49 @@ li a {
 .carousel-inner .carousel-item-end,
 .carousel-inner .carousel-item-start {
     transform: translateX(0);
+}
+
+.btn {
+    color: white !important;
+    padding: 0px;
+}
+
+.btn:focus {
+    box-shadow: none !important;
+}
+
+.button-search {
+    background-color: #ff6924;
+    color: #fff;
+    border: 1px solid #ff6924;
+    padding: 5px 15px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.input-search input {
+    border: none;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.input-search input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #ff6924;
+}
+
+.dropdown-item {
+    font-size: 13px !important;
+    color: #000 !important;
+    padding: 8px;
+}
+
+.dropdown-menu li:hover>.dropdown-item {
+    color: #000 !important;
+}
+
+#dropdownSearch li:hover {
+    background-color: #e9ecef !important;
 }

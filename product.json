@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "name": "Bánh Kem Endless Love",
+        "slug": "banh-kem-endless-love",
+        "images": ["banh1.webp", "banh2.webp", "banh3.webp", "banh4.webp"],
+        "price": 380000,
+        "oldPrice": 350000,
+        "discount": 6,
+        "description": "Phần trang trí: jelly caramel, vụn bánh gato, dâu tươi, đào, việt quất, kem tươi",
+        "categoryID": 1
+    },
+    {
+        "id": 2,
+        "name": "Bánh kem Flower Of Love",
+        "slug": "banh-kem-flower-of-love",
+        "images": ["banh5.webp", "banh7.webp", "banh6.webp"],
+        "price": 380000,
+        "oldPrice": 350000,
+        "discount": 6,
+        "description": "Phần trang trí: jelly caramel, vụn bánh gato, dâu tươi, đào, việt quất, kem tươi",
+        "categoryID": 1
+    },
+    {
+        "id": 3,
+        "name": "Bánh Kem LiLy Garden",
+        "slug": "banh-kem-liLy-garden",
+        "images": ["banh9.webp", "banh10.webp"],
+        "price": 120000,
+        "oldPrice": 100000,
+        "discount": 9,
+        "description": "Phần trang trí: jelly caramel, vụn bánh gato, dâu tươi, đào, việt quất, kem tươi",
+        "categoryID": 2
+    },
+    {
+        "id": 4,
+        "name": "Bánh Kem Chocolate Lover",
+        "slug": "banh-kem-chocolate-lover",
+        "images": ["banh11.webp", "banh17.webp", "banh13.webp", "banh14.webp"],
+        "price": 230000,
+        "oldPrice": 200000,
+        "discount": 6,
+        "description": "Phần trang trí: jelly caramel, vụn bánh gato, dâu tươi, đào, việt quất, kem tươi",
+        "categoryID": 2
+    }
+]

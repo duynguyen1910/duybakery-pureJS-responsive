@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>DuyBakery</title>
+    <title>Duy Bakery</title>
+    <link rel="icon" type="image/x-icon" href="../../img/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/boo
 tstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
@@ -91,24 +92,19 @@ tstrap.min.css" rel="stylesheet">
             class="wrap-product-detail d-flex justify-content-center align-items-center flex-column flex-xl-row py-5 px-xl-5">
             <div class="mb-4 mb-xl-0 me-xl-5">
                 <div class="detail-img d-flex justify-content-center align-items-center mb-2 mb-md-4">
-                    <img id="main-image" src="../img/product1.webp" alt="" data-zoom="../img/product1-clone.png"
+                    <img id="mainImage" src="../img/product1.webp" alt="" data-zoom="../img/product1-clone.png"
                         width="200" class="product-img">
                     <i class="fa fa-search fa-lg zoom-img" style="color: #010148;" aria-hidden="true"></i>
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
-                    <div class="detail-child d-flex justify-content-between">
-                        <img id="vairiant-images" class="me-2 me-md-4" src="../img/product1.webp" alt="" width="100"
-                            height="100" data-zoom="../img/product1-clone.png">
-                        <img id="vairiant-images" class="me-2 me-md-4" src="../img/product2.webp"
-                            data-zoom="../img/product2-clone.png" alt="" width="100" height="100">
-                        <img id="vairiant-images" src="../img/product3.webp" data-zoom="../img/product3-clone.png"
-                            alt="" width="100" height="100">
+                    <div id="variantWrapImages" class="detail-child d-flex justify-content-between">
+
                     </div>
                 </div>
             </div>
             <div class="details p-3 px-md-5">
-                <span class="price-percent-reduction">5%</span>
-                <div class="product-name mb-xxl-1">
+                <span id="disCount" class="price-percent-reduction">5%</span>
+                <div id="productName" class="product-name mb-xxl-1">
                     Bánh Kem Fresh Garden
                 </div>
                 <div class="d-flex align-items-center mb-3 mb-xxl-4">
@@ -123,10 +119,10 @@ tstrap.min.css" rel="stylesheet">
                     <div class="desc-product">(2 đánh giá của khách hàng)</div>
                 </div>
                 <div class="price-wapper  mb-xxl-4">
-                    <div class="price">510.098&nbsp;₫</div>
-                    <div class="price-sale">600.872&nbsp;₫</div>
+                    <div id="productOldPrice" class="price">510.098&nbsp;₫</div>
+                    <div id="productPrice" class="price-sale">600.872&nbsp;₫</div>
                 </div>
-                <div class="desc-product mb-4  mb-xxl-5">
+                <div id="productDesc" class="desc-product mb-4  mb-xxl-5">
                     Ngon, no và tốt cho sức khỏe, Granola hữu cơ Biona với quả dại của chúng tôi chính là thứ giúp bạn
                     ra
                     khỏi giường. Sự ngon lành của yến mạch nguyên hạt cuộn được kết hợp với nhiều loại quả mọng hữu cơ
@@ -521,7 +517,7 @@ tstrap.min.css" rel="stylesheet">
             </div>
         </div>
     </div>
-    
+
     <div id="btn-gotop" class="d-flex justify-content-center align-items-center btn-gotop">
         <button><i class="fa-solid fa-chevron-up"></i></button>
     </div>
@@ -616,18 +612,22 @@ tstrap.min.css" rel="stylesheet">
             </div>
         </section>
         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-            © 2023 Copyright by
+            © 2024 Copyright by
             <span class="text-reset fw-bold" href="https://mdbootstrap.com/">DuyBakery</span>
         </div>
     </footer>
 
 
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/drift-zoom/dist/Drift.min.js"></script>
     <script src="https://kit.fontawesome.com/1c2be09150.js" crossorigin="anonymous"></script>
     <script src="./script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootst
 rap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="../utils/regex.js"></script>
+    <script src="../utils/common.js"></script>
+    <script src="../utils/constants.js"></script>
+    <script src="../models/User.js"></script>
 </body>
 
 </html>

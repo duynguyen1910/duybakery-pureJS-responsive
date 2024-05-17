@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duy Bakery | Đăng nhập</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" type="image/x-icon" href="../../img/favicon.png">
+</head>
+
+<body>
+    <div class="box">
+        <a class="wrap-logo" href="../Home/index.html">
+            <img class="logo" src="../../img/white-logo.png" alt="" width="180" height="180">
+        </a>
+        <div class="inputBox">
+            <input id="username" class="text-field" type="text" name="text" required
+         value="" />
+            <label>Số điện thoại</label>
+            <div id="errorToaster" class="toater-error">
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="errorTextToaster">Bạn có chắc chắn đã nhập đúng tên
+                    của mình không?</span>
+            </div>
+        </div>
+        <div class="inputBox">
+            <input id="password" class="text-field" type="password" name="password" required
+              value="" />
+            <label>Mật khẩu</label>
+            <span class="input-checkbox">
+                <input id="login-checkbox" type="checkbox" checked>
+                <span>Ghi nhớ mật khẩu</span>
+            </span>
+            <div class="password-eye">
+                <i style="display: none;" onclick="onClosePassword()" id="eyeSlashPassword"
+                    class="fa-solid fa-eye-slash"></i>
+                <i onclick="onShowPassword()" id="eyePassword" class="fa-solid fa-eye"></i>
+            </div>
+        </div>
+
+        <button onclick="onLogin()" class="login-btn">Đăng nhập</button>
+        <div class="login-other">
+            <span href="">Quên mật khẩu</span>
+            <span href="">Đăng nhập với SMS</span>
+        </div>
+        <div class="line">
+            <div>Hoặc</div>
+        </div>
+        <div class="social-media">
+            <img src="../../img/facebook.png" alt="" width="20">
+            <img src="../../img/google.png" alt="" width="20">
+            <img src="../../img/twitter.png" alt="" width="20">
+            <img src="../../img/instagram.png" alt="" width="20">
+        </div>
+        <a class="new-account" href="../Register/index.html">
+            Tạo tài khoản mới
+        </a>
+    </div>
+
+
+    <script src="./script.js"></script>
+    <script src="https://kit.fontawesome.com/1c2be09150.js" crossorigin="anonymous"></script>
+    <script src="../utils/regex.js"></script>
+    <script src="../utils/common.js"></script>
+    <script src="../utils/constants.js"></script>
+    <script src="../models/User.js"></script>
+</body>
+
+</html>

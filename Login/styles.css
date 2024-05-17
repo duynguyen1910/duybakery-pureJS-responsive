@@ -1,0 +1,241 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    background: url('../../img/login-bg-blur.jpg') no-repeat center center fixed;
+    background-size: cover;
+    /* filter: blur(5px); */
+
+}
+
+.logo-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: contain;
+}
+
+.wrap-logo {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 22rem;
+    box-sizing: border-box;
+    border: 1px solid #dadce0;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: white;
+    z-index: 5;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+.box h2 {
+    margin: 0 0 0.125rem;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    color: #202124;
+    font-family: "Google Sans", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.box p {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.box .inputBox {
+    position: relative;
+    margin-bottom: 24px;
+    /* margin-left: 1.76rem; */
+}
+
+.box .inputBox .text-field {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 14px;
+    letter-spacing: 0.062rem;
+    border: 1px solid #ccc;
+    background: transparent;
+    border-radius: 3px;
+    margin-bottom: 2px;
+}
+
+.box .inputBox label {
+    position: absolute;
+    top: 3px;
+    left: 14px;
+    padding: 0.625rem 0;
+    font-size: 13px;
+    color: gray;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.box .inputBox label {
+    position: absolute;
+    top: 3px;
+    left: 14px;
+    padding: 0.625rem 0;
+    font-size: 13px;
+    color: gray;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+
+.box .inputBox .text-field:focus~label,
+.box .inputBox .text-field:valid~label,
+.box .inputBox .text-field:not([value=""])~label {
+    top: -17px;
+    left: 10px;
+    color: #ff6924;
+    font-size: 0.75rem;
+    background-color: #fff;
+    height: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.box .inputBox .text-field:focus {
+    outline: none;
+    border: 2px solid #ff6924;
+}
+
+.box input[type="submit"] {
+    margin-right: 1.76rem;
+    margin-bottom: 2rem;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: #ff6924;
+    padding: 0.625rem 1.25rem;
+    cursor: pointer;
+    border-radius: 0.312rem;
+    font-size: 1rem;
+    float: right;
+}
+
+.box input[type="submit"]:hover {
+    background-color: #287ae6;
+    box-shadow: 0 1px 1px 0 rgba(66, 133, 244, 0.45),
+        0 1px 3px 1px rgba(66, 133, 244, 0.3);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 13px;
+    color: #fff;
+    background-color: #ff6924;
+    border-radius: 3px;
+    border: none;
+    margin-bottom: 4px;
+    font-size: 13px;
+    font-family: Times;
+    cursor: pointer;
+}
+
+.login-other {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.login-other span {
+    font-size: 12px;
+    color: #010148;
+}
+
+.line {
+    border-top: 1px solid #ccc;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.line div {
+    background: #fff;
+    position: absolute;
+    top: -8px;
+    padding: 0 5px;
+    color: gray;
+    font-size: 12px;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.social-media img {
+    margin: 0 6px;
+}
+
+.new-account {
+    font-size: 13px;
+    color: #010148;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin: 8px 0;
+}
+
+.toater-error {
+    width: 100%;
+    display: flex;
+    color: #b3261e;
+    font-size: 12px;
+    align-items: center;
+    display: none;
+}
+
+.toater-error i {
+    margin-right: 6px;
+}
+
+.input-checkbox {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.input-checkbox input {
+    margin-right: 6px;
+    accent-color: #ff6924;
+}
+
+.input-checkbox span {
+    font-size: 12px;
+    color: #010148;
+}
+
+.password-eye i {
+    position: absolute;
+    right: 12px;
+    top: 13px;
+    color: gray;
+    cursor: pointer;
+}

@@ -1273,3 +1273,7 @@ footer {
         margin-left: 64rem;
     }
 }
+
+.variant-image-active {
+    border: 2px solid #ff6924 !important;
+}
