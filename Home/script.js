@@ -2,10 +2,8 @@ const profileName = document.querySelectorAll(".product-name-id");
 const iconDefault = document.querySelectorAll(".profile-icon");
 const iconLogeed = document.querySelectorAll(".btn-group");
 
-const productListWrapTag = document.querySelector("#productListWrapTag");
-
-var products = [];
 var categories = [];
+var products = [];
 
 const categoryWrapTag = document.getElementById("categoryWrapTag");
 const onLoadCategory = async () => {
@@ -29,6 +27,8 @@ const onLoadCategory = async () => {
 }
 onLoadCategory();
 
+
+const productListWrapTag = document.querySelector("#productListWrapTag");
 const onLoadProduct = async () => {
   const response = await fetch('../product.json');
   products = await response.json();

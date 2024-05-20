@@ -11,9 +11,8 @@ var buttonSearch = document.querySelectorAll(".button-search");
 var moreButton = document.getElementById("more");
 var lessButton = document.getElementById("less");
 
-
-var products = [];
 var categories = [];
+var products = [];
 var isExpanded = false;
 var categoriesChecked = [];
 var keyword = "";
