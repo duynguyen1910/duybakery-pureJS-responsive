@@ -859,6 +859,18 @@ li a {
     margin-right: 0rem;
 }
 
+.dropdown-item:active {
+    background-color: #e9ecef !important;
+}
+
+.tag-category-product-item {
+    border: 1px solid #ff6924;
+    color: #ff6924;
+    border-radius: 2px;
+    padding: 1.5px 5px;
+    font-size: 11px;
+    font-weight: 600;
+}
 
 
 @media screen and (min-width: 576px) {
@@ -998,6 +1010,10 @@ li a {
 
     .dropdown-menu {
         width: 309px;
+    }
+
+    .dropdown-profile {
+        width: 200px;
     }
 }
 

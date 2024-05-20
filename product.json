@@ -3,10 +3,15 @@
         "id": 1,
         "name": "Bánh Kem Endless Love",
         "slug": "banh-kem-endless-love",
-        "images": ["banh1.webp", "banh2.webp", "banh3.webp", "banh4.webp"],
+        "images": [
+            "banh1.webp",
+            "banh2.webp",
+            "banh3.webp",
+            "banh4.webp"
+        ],
         "price": 380000,
         "oldPrice": 350000,
-        "discount": 6,
+        "discount": 2,
         "description": "Phần trang trí: jelly caramel, vụn bánh gato, dâu tươi, đào, việt quất, kem tươi",
         "categoryID": 1
     },
@@ -14,7 +19,11 @@
         "id": 2,
         "name": "Bánh kem Flower Of Love",
         "slug": "banh-kem-flower-of-love",
-        "images": ["banh5.webp", "banh7.webp", "banh6.webp"],
+        "images": [
+            "banh5.webp",
+            "banh7.webp",
+            "banh6.webp"
+        ],
         "price": 380000,
         "oldPrice": 350000,
         "discount": 6,
@@ -23,24 +32,162 @@
     },
     {
         "id": 3,
-        "name": "Bánh Kem LiLy Garden",
-        "slug": "banh-kem-liLy-garden",
-        "images": ["banh9.webp", "banh10.webp"],
+        "name": "Bánh Chiffon 3 Vị",
+        "slug": "banh-chiffon-3-vi",
+        "images": [
+            "banh8.webp",
+            "banh9.webp"
+        ],
         "price": 120000,
         "oldPrice": 100000,
         "discount": 9,
-        "description": "Phần trang trí: jelly caramel, vụn bánh gato, dâu tươi, đào, việt quất, kem tươi",
-        "categoryID": 2
+        "description": "Thành phần: Trứng gà, đường, bột mỳ, bột ca cao, hương cà phê tổng hợp, hương vani tổng hợp, bột làm bánh Tartar, bơ, mật ong, siro đường, rượu rum. ",
+        "categoryID": 1
     },
     {
         "id": 4,
-        "name": "Bánh Kem Chocolate Lover",
-        "slug": "banh-kem-chocolate-lover",
-        "images": ["banh11.webp", "banh17.webp", "banh13.webp", "banh14.webp"],
-        "price": 230000,
-        "oldPrice": 200000,
-        "discount": 6,
-        "description": "Phần trang trí: jelly caramel, vụn bánh gato, dâu tươi, đào, việt quất, kem tươi",
+        "name": "Bánh Chiffon Trà Xanh",
+        "slug": "banh-chiffon-tra-xanh",
+        "images": [
+            "banh10.webp",
+            "banh11.webp",
+            "banh15.webp",
+            "banh13.webp",
+            "banh14.webp"
+        ],
+        "price": 21000,
+        "oldPrice": 20000,
+        "discount": 9,
+        "description": "Thành phần: Trứng gà, đường, bột mỳ, bơ, nước, bột trà xanh (1%), bột làm bánh Tartar, mật ong, siro đường, rượu rum.",
+        "categoryID": 1
+    },
+    {
+        "id": 5,
+        "name": "Bánh Mì Kẹp Pa Tê",
+        "slug": "banh-mi-kep-pa-te",
+        "images": [
+            "product1-banhmi.jpeg"
+        ],
+        "price": 20000,
+        "oldPrice": 19500,
+        "discount": 1,
+        "description": "Thành phần: Vỏ bánh mì kẹp cỡ lớn, pa tê, sốt bánh mỳ kẹp, dưa góp, rau mùi",
+        "categoryID": 3
+    },
+    {
+        "id": 6,
+        "name": "Bánh Mì Kẹp Gà Teriyaki",
+        "slug": "banh-mi-kep-ga-teriyaki",
+        "images": [
+            "product2-banhmi.jpeg"
+        ],
+        "price": 20000,
+        "oldPrice": 19500,
+        "discount": 1,
+        "description": "Thành phần: Vỏ bánh mì kẹp cỡ lớn, gà nướng bỏ lò Teriyaki, sốt bánh mỳ kẹp, dưa góp, rau mùi",
+        "categoryID": 3
+    },
+    {
+        "id": 7,
+        "name": "Hộp Bánh Macaron",
+        "slug": "hop-banh-macaron",
+        "images": [
+            "product1-banhkho.png",
+            "product1-banhkho1.png",
+            "product1-banhkho2.png",
+            "product1-banhkho3.png"
+        ],
+        "price": 99000,
+        "oldPrice": 90000,
+        "discount": 2,
+        "description": "Bột hạnh nhân, đường, lòng trắng trứng, sô cô la, sữa tươi, cam vàng, chanh vàng, chanh leo, mứt mơ, mứt dâu, trà bá tước, trà xanh, mè đen, gelatin, quả vani, hương bạc hà, màu thực phẩm.",
+        "categoryID": 4
+    },
+    {
+        "id": 8,
+        "name": "Bánh Chesee Cracker",
+        "slug": "banhnh-chesee-cracker",
+        "images": [
+            "product1-macchi.png",
+            "product2-macchi.png"
+        ],
+        "price": 49000,
+        "oldPrice": 40000,
+        "discount": 2,
+        "description": "Bột mì hảo hạng, bơ thực vật, dầu thực vật, đường xay, sữa bột whey, bột phô mai (3%), baking soda, bột nở, men làm bánh, muối tinh, lecethin, malt extract, hương phô mai, enzyme protease.",
+        "categoryID": 5
+    },
+    {
+        "id": 9,
+        "name": "Thùng Bánh Mì Nướng Macchi",
+        "slug": "thung-banh-mi-nuong-macchi",
+        "images": [
+            "product3-macchi.png"
+        ],
+        "price": 144000,
+        "oldPrice": 14000,
+        "discount": 1,
+        "description": "Bánh mì nướng Macchi có 4 vị: - Bánh mì nướng mật ong đường nâu. - Bánh mì nướng caramen muối hồng. - Bánh mì nướng phô mai. - Bánh mì nướng bơ tỏi organic.",
+        "categoryID": 5
+    },
+    {
+        "id": 9,
+        "name": "Nougat Hạnh Nhân 200g",
+        "slug": "nougat-hanh-nhan-200g",
+        "images": [
+            "product4-macchi.png",
+            "product5-macchi.png"
+        ],
+        "price": 99000,
+        "oldPrice": 98000,
+        "discount": 3,
+        "description": "Sữa bột, hạnh nhân (26,8%), mạch nha, nước đường, bơ, gelatin.",
+        "categoryID": 5
+    },
+    {
+        "id": 10,
+        "name": "Bông Lan Cuộn Cam",
+        "slug": "bong-lan-cuon-cam",
+        "images": [
+            "product3-dongot.jpeg",
+            "product3-dongot1.jpeg",
+            "product3-dongot2.jpeg",
+            "product3-dongot3.jpeg"
+        ],
+        "price": 27000,
+        "oldPrice": 26000,
+        "discount": 2,
+        "description": "Thành phần: Bột trộn sẵn cam, trứng gà, dầu ăn, chất ổn định, whipping cream Hướng dẫn sử dụng: Dùng trực tiếp ngay sau khi mở bao bì Hướng dẫn bảo quản: Bảo quản ở nhiệt độ 0-5 độ C",
         "categoryID": 2
+    },
+    {
+        "id": 11,
+        "name": "Bánh Sandwich Bơ Cao Cấp 300G",
+        "slug": "banh-sandwich-bo-cao-cap-300G",
+        "images": [
+            "product2-banhkho.jpeg",
+            "product2-banhkho1.jpeg",
+            "product2-banhkho2.jpeg"
+        ],
+        "price": 87000,
+        "oldPrice": 85000,
+        "discount": 1,
+        "description": "- Bánh Pía là món bánh đặc sắc của dân tộc Hoa và là đặc sản nổi tiếng của Sóc Trăng, Bánh Pía Đậu Xanh Sầu Riêng 3 Sao 440G của Tân Huê Viên là một trong số những sản phẩm đặc trưng ấy.",
+        "categoryID": 4
+    },
+    {
+        "id": 12,
+        "name": "Set Bánh Mont Blanc 2 Cái",
+        "slug": "set-banh-mont-blanc-2-cai",
+        "images": [
+            "product3-banhkho.jpeg",
+            "product3-banhkho1.jpeg",
+            "product3-banhkho2.jpeg"
+        ],
+        "price": 87000,
+        "oldPrice": 85000,
+        "discount": 1,
+        "description": "Thành phần: Bột mì, men khô, muối, đường, bơ, bột sữa, phụ gia, trứng gà. Hướng dẫn sử dụng: Dùng trong ngày, sử dụng sau khi mở bao bì. Hướng dẫn bảo quản: Bảo quản nơi khô ráo, thoáng mát, tránh ánh nắng trực tiếp",
+        "categoryID": 4
     }
 ]

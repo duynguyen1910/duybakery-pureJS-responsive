@@ -4,15 +4,39 @@ const iconLogeed = document.querySelectorAll(".btn-group");
 
 const productListWrapTag = document.querySelector("#productListWrapTag");
 
-let products = [];
+var products = [];
+var categories = [];
+
+const categoryWrapTag = document.getElementById("categoryWrapTag");
+const onLoadCategory = async () => {
+  const response = await fetch('../category.json');
+  const category = await response.json();
+  categories = category;
+
+  category.forEach(({ name, image }) => {
+    const categoryItemHTML = `
+    <div class="col-6 col-md-4 col-lg-3 col-xl-2 " role="button">
+                    <div class="cate-item py-5 ">
+                        <div class="d-flex justify-content-center mb-3">
+                            <img src="../img/${image}.png" alt="" width="56">
+                        </div>
+                        <div class="cate-title text-center text-white fw-bold">${name}</div>
+                    </div>
+                </div>`
+
+    categoryWrapTag.insertAdjacentHTML('beforeend', categoryItemHTML);
+  });
+}
+onLoadCategory();
+
 
 const setProfileUser = () => {
-  const currentUser = localStorage.getItem('user_info') || {};
-  let { fullname } = JSON.parse(currentUser);
+  const currentUser = localStorage.getItem('user_info');
+  let currentUserParse = currentUser ? JSON.parse(currentUser) : null;
 
-  if (fullname) {
-    profileName[0].innerHTML = fullname.split(" ")[2];
-    profileName[1].innerHTML = fullname.split(" ")[2];
+  if (currentUserParse?.fullname) {
+    profileName[0].innerHTML = currentUserParse.fullname.split(" ")[2];
+    profileName[1].innerHTML = currentUserParse.fullname.split(" ")[2];
     iconLogeed[0].style.display = "block";
     iconLogeed[1].style.display = "block";
   } else {
@@ -20,7 +44,7 @@ const setProfileUser = () => {
     iconLogeed[1].style.display = "none";
   }
 
-  if (!fullname) {
+  if (!currentUserParse?.fullname) {
     iconDefault[0].style.display = "block"
     iconDefault[1].style.display = "block"
   } else {
@@ -28,18 +52,12 @@ const setProfileUser = () => {
     iconDefault[1].style.display = "none"
   }
 }
-
 setProfileUser();
 
-const onLogout = () => {
-  setLocalStorage(USER_INFO, {});
-  redirectPage("Login");
-}
 
-const onRenderProduct = async () => {
+const onLoadProduct = async () => {
   const response = await fetch('../product.json');
   products = await response.json();
-
 
   products.forEach(product => {
     const productItemHTML = `
@@ -58,7 +76,7 @@ const onRenderProduct = async () => {
                         <h5 class="name">
                             <span class="product-name">${product.name}</span>
                         </h5>
-                        <div class="comments_note product-rating clearfix">
+                          <div class="d-flex justify-content-between align-items-center w-100 comments_note product-rating clearfix">
                             <div class="star_content">
                                 <i class="fas fa-star star"></i>
                                 <i class="fas fa-star star"></i>
@@ -66,7 +84,10 @@ const onRenderProduct = async () => {
                                 <i class="fas fa-star star"></i>
                                 <i class="fas fa-star star"></i>
                             </div>
-                        </div>
+                            <div class="tag-category-product-item">
+                               ${getCategoryName(product.categoryID)}
+                            </div>
+                          </div>
                         <div class="content_price">
                             <span class="price product-price">${formatVND(product.price)}
                             </span>
@@ -91,11 +112,27 @@ const onRenderProduct = async () => {
     productListWrapTag.insertAdjacentHTML('beforeend', productItemHTML);
   });
 }
+onLoadProduct();
 
-onRenderProduct();
+
+const onLogout = () => {
+  setLocalStorage(USER_INFO, {});
+  redirectPage("Login");
+}
+
+var getCategoryName = (categoryId) => {
+  if (categories.length) {
+    const { name } = categories.find(({ id }) => id === categoryId);
+
+    return name;
+  }
 
 
-// search product debouce
+
+}
+
+
+// search debouce
 const dropdownMenuButton1 = document.getElementById("dropdownMenuButton1");
 const dropdownSearch = document.getElementById("dropdownSearch");
 const inputSearchMain = document.querySelectorAll(".input-search-main");
@@ -105,7 +142,7 @@ const buttonSearch = document.querySelectorAll(".button-search");
 let keyword;
 
 inputSearchMain[0].addEventListener('input', function (e) {
-  keyword = e.target.value.toLowerCase();
+  keyword = e.target.value.toLowerCase().trim();
 
   if (keyword) {
     const filteredProducts = products.filter(product =>
@@ -117,13 +154,13 @@ inputSearchMain[0].addEventListener('input', function (e) {
     if (filteredProducts.length === 0) dropdownMenuMain[0].innerHTML = `
       <li><a class="dropdown-item">Không tìm thấy kết quả phù hợp</a></li>`;
 
-    filteredProducts.forEach(({ name }) => {
+    filteredProducts.forEach(({ name, slug }) => {
       let highlightName = name.replace(new RegExp(keyword, 'gi'), (match) => {
         return `<span style="font-weight: bold">${match}</span>`;
       });
 
       const resultItemHTML = `
-        <li class="result-search-item"><a class="dropdown-item" href="#">${highlightName}</a></li>
+        <li class="result-search-item"><a class="dropdown-item" href="/Search/index.html?keyword=${name}">${highlightName}</a></li>
         `
 
       dropdownMenuMain[0].insertAdjacentHTML('beforeend', resultItemHTML);
@@ -135,13 +172,9 @@ inputSearchMain[0].addEventListener('input', function (e) {
   }
 });
 
-inputSearchMain[0].addEventListener('blur', function () {
-  dropdownMenuMain[0].style.display = "none";
-});
-
 
 inputSearchMain[1].addEventListener('input', function (e) {
-  keyword = e.target.value.toLowerCase();
+  keyword = e.target.value.toLowerCase().trim();
 
   if (keyword) {
     const filteredProducts = products.filter(product =>
@@ -153,14 +186,14 @@ inputSearchMain[1].addEventListener('input', function (e) {
     if (filteredProducts.length === 0) dropdownMenuMain[1].innerHTML = `
       <li><a class="dropdown-item">Không tìm thấy kết quả phù hợp</a></li>`;
 
-    filteredProducts.forEach(({ name }) => {
+    filteredProducts.forEach(({ name, slug }) => {
       let highlightName = name.replace(new RegExp(keyword, 'gi'), (match) => {
         return `<span style="font-weight: bold">${match}</span>`;
       });
 
       const resultItemHTML = `
-        <li class="result-search-item"><a class="dropdown-item" href="#">${highlightName}</a></li>
-        `
+      <li class="result-search-item"><a class="dropdown-item" href="/Search/index.html?keyword=${name}">${highlightName}</a></li>
+      `
 
       dropdownMenuMain[1].insertAdjacentHTML('beforeend', resultItemHTML);
     })
@@ -171,14 +204,38 @@ inputSearchMain[1].addEventListener('input', function (e) {
   }
 });
 
-inputSearchMain[1].addEventListener('blur', function () {
-  dropdownMenuMain[1].style.display = "none";
+document.addEventListener('click', function (event) {
+  var isClickInsideInput = inputSearchMain[0].contains(event.target);
+  var isClickInsideDropdown1 = dropdownMenuMain[0].contains(event.target);
+  var isClickInsideDropdown2 = dropdownMenuMain[1].contains(event.target);
+
+  if (!isClickInsideInput && !isClickInsideDropdown1 && !isClickInsideDropdown2) {
+    dropdownMenuMain[0].style.display = "none";
+    dropdownMenuMain[1].style.display = "none";
+  }
+});
+
+
+inputSearchMain[0].addEventListener('focus', function () {
+  if (keyword) {
+    dropdownMenuMain[0].style.display = "block";
+  }
+
+});
+
+
+inputSearchMain[1].addEventListener('focus', function () {
+  if (keyword) {
+    dropdownMenuMain[1].style.display = "block";
+  }
 });
 
 
 const onSearch = () => {
-  window.location.replace(window.location.protocol + "//" +
-    window.location.host + '/Search/index.html?keyword=' + keyword);
+  if (keyword) {
+    window.location.replace(window.location.protocol + "//" +
+      window.location.host + '/Search/index.html?keyword=' + keyword);
+  }
 }
 
 inputSearchMain[0].addEventListener('keypress', function (e) {

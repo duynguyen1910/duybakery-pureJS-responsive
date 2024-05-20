@@ -377,7 +377,7 @@ li a {
     border: none;
     padding: 10px 12px;
     border-radius: 4px;
-    
+
 }
 
 .orange-text {
@@ -769,6 +769,121 @@ li a {
     animation: hover-cart 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1;
 }
 
+
+
+.form-check-input:checked {
+    background-color: #ff6924;
+    border-color: #ff6924;
+}
+
+.form-check-input:focus {
+    border-color: #f6834e !important;
+}
+
+.profile-icon {
+    position: relative;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.profile-icon:hover {
+    color: #ff6924 !important;
+}
+
+.profile-name {
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 2px;
+}
+
+.button-search {
+    background-color: #ff6924;
+    color: #fff;
+    border: 1px solid #ff6924;
+    padding: 5px 15px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.input-search input {
+    border: none;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.input-search input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #ff6924;
+}
+
+.dropdown-item {
+    font-size: 13px !important;
+    color: #000 !important;
+    padding: 8px;
+}
+
+.dropdown-menu li:hover>.dropdown-item {
+    color: #000 !important;
+}
+
+#dropdownSearch li:hover {
+    background-color: #e9ecef !important;
+}
+
+.btn {
+    color: white !important;
+    padding: 0px;
+}
+
+.btn:focus {
+    box-shadow: none !important;
+}
+
+.input-search input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #ff6924;
+}
+
+#dropdownMenuButton1 {
+    display: none;
+}
+
+.more-title {
+    display: flex;
+    align-items: center;
+    color: #ff6924;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.input-search-price {
+    font-size: 12px;
+    color: #010148;
+    padding: 5px 8px;
+    width: 30%;
+    border: 1.5px solid #dee2e6;
+    border-radius: 2px;
+}
+
+.input-search-price:focus-visible {
+    outline: none;
+    border: 1.5px solid #ff6924 !important;
+}
+
+.tag-category-product-item {
+    border: 1px solid #ff6924;
+    color: #ff6924;
+    border-radius: 2px;
+    padding: 1.5px 5px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
 footer {
     margin-bottom: 212px;
 }
@@ -784,6 +899,11 @@ footer {
 
     footer {
         margin-bottom: 212px;
+    }
+
+
+    #dropdownMenuButton1 {
+        display: block;
     }
 }
 
@@ -824,9 +944,17 @@ footer {
     #total {
         margin-left: 20rem;
     }
-    
+
     .product-block .name span {
         font-size: 16px;
+    }
+
+    #dropdownMenuButton1 {
+        width: 260px;
+    }
+
+    .dropdown-menu {
+        width: 309px;
     }
 }
 

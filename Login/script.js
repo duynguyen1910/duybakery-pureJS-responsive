@@ -54,7 +54,10 @@ const onLogin = () => {
 
 
     if(!listUser.find((user) => user.password === passwordEle.value)) {
-        console.log("Mật khẩu không đúng!")
+        errorToaster.style.display = "block";
+        errorTextToaster.innerHTML = "Mật khẩu không chính xác";
+
+        return;
     }
 
     const currentUser = listUser.find((user) => user.username === usernameEle.value);

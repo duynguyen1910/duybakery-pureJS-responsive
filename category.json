@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Bánh Kem",
+        "image": "cate1"
+    },
+    {
+        "id": 2,
+        "name": "Bánh Ngọt",
+        "image": "cate2"
+    },
+    {
+        "id": 3,
+        "name": "Bánh Mì",
+        "image": "cate3"
+    },
+    {
+        "id": 4,
+        "name": "Bánh Khô",
+        "image": "cate4"
+    },
+    {
+        "id": 5,
+        "name": "Macchi",
+        "image": "cate5"
+    },
+    {
+        "id": 6,
+        "name": "Đồ Uống",
+        "image": "cate6"
+    },
+    {
+        "id": 7,
+        "name": "Bánh Quy",
+        "image": "cate7"
+    },
+    {
+        "id": 8,
+        "name": "Bánh Chay",
+        "image": "cate8"
+    },
+    {
+        "id": 9,
+        "name": "Chocolate",
+        "image": "cate9"
+    },
+    {
+        "id": 10,
+        "name": "Bánh Trung Thu",
+        "image": "cate10"
+    },
+    {
+        "id": 11,
+        "name": "Bánh Mặn",
+        "image": "cate11"
+    },
+    {
+        "id": 12,
+        "name": "Bánh Xốp",
+        "image": "cate12"
+    }
+]

@@ -1067,6 +1067,87 @@ footer {
     float: left;
 }
 
+.profile-icon {
+    position: relative;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.profile-icon:hover {
+    color: #ff6924 !important;
+}
+
+.profile-name {
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 2px;
+}
+
+.button-search {
+    background-color: #ff6924;
+    color: #fff;
+    border: 1px solid #ff6924;
+    padding: 5px 15px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.input-search input {
+    border: none;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.input-search input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #ff6924;
+}
+
+.dropdown-item {
+    font-size: 13px !important;
+    color: #000 !important;
+    padding: 8px;
+}
+
+.dropdown-menu li:hover>.dropdown-item {
+    color: #000 !important;
+}
+
+#dropdownSearch li:hover {
+    background-color: #e9ecef !important;
+}
+
+.btn {
+    color: white !important;
+    padding: 0px;
+}
+
+.btn:focus {
+    box-shadow: none !important;
+}
+
+.input-search input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #ff6924;
+}
+
+#dropdownMenuButton1 {
+    display: none;
+}
+
+.tag-category-product-item {
+    border: 1px solid #ff6924;
+    color: #ff6924;
+    border-radius: 2px;
+    padding: 1.5px 5px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
 @media screen and (min-width: 576px) {
     .coupon input {
         padding: 11px 50px 11px 24px;
@@ -1094,6 +1175,10 @@ footer {
 
     .detail-img {
         padding: 4.5rem 2.5rem;
+    }
+
+    #dropdownMenuButton1 {
+        display: block;
     }
 }
 
@@ -1145,6 +1230,15 @@ footer {
 
     .product-block .name span {
         font-size: 16px;
+    }
+
+
+    #dropdownMenuButton1 {
+        width: 260px;
+    }
+
+    .dropdown-menu {
+        width: 309px;
     }
 }
 
