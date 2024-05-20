@@ -233,8 +233,7 @@ inputSearchMain[1].addEventListener('focus', function () {
 
 const onSearch = () => {
   if (keyword) {
-    window.location.replace(window.location.protocol + "//" +
-      window.location.host + '/Search/index.html?keyword=' + keyword);
+    window.location.replace(window.location.origin + '/Search/index.html?keyword=' + keyword);
   }
 }
 
