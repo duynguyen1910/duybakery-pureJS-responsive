@@ -150,6 +150,11 @@ inputSearchMain[1].addEventListener('keypress', function (e) {
 
 
 
+var onLogout = () => {
+  setLocalStorage(USER_INFO, {});
+  redirectPage("Login");
+}
+
 
 var backToTopBtn = document.getElementById("btn-gotop");
 

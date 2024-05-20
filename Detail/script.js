@@ -94,6 +94,11 @@ var setProfileUser = () => {
 setProfileUser();
 
 
+var onLogout = () => {
+  setLocalStorage(USER_INFO, {});
+  redirectPage("Login");
+}
+
 
 // search debouce
 var keyword;

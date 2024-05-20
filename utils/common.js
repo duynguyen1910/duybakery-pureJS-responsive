@@ -13,5 +13,7 @@ const redirectPage = (url) => {
 
 
 const formatVND = (money) => {
-    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(money);
+    if (money) {
+        return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(money);
+    }
 }

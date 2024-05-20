@@ -29,32 +29,6 @@ const onLoadCategory = async () => {
 }
 onLoadCategory();
 
-
-const setProfileUser = () => {
-  const currentUser = localStorage.getItem('user_info');
-  let currentUserParse = currentUser ? JSON.parse(currentUser) : null;
-
-  if (currentUserParse?.fullname) {
-    profileName[0].innerHTML = currentUserParse.fullname.split(" ")[2];
-    profileName[1].innerHTML = currentUserParse.fullname.split(" ")[2];
-    iconLogeed[0].style.display = "block";
-    iconLogeed[1].style.display = "block";
-  } else {
-    iconLogeed[0].style.display = "none";
-    iconLogeed[1].style.display = "none";
-  }
-
-  if (!currentUserParse?.fullname) {
-    iconDefault[0].style.display = "block"
-    iconDefault[1].style.display = "block"
-  } else {
-    iconDefault[0].style.display = "none"
-    iconDefault[1].style.display = "none"
-  }
-}
-setProfileUser();
-
-
 const onLoadProduct = async () => {
   const response = await fetch('../product.json');
   products = await response.json();
@@ -113,6 +87,31 @@ const onLoadProduct = async () => {
   });
 }
 onLoadProduct();
+
+
+const setProfileUser = () => {
+  const currentUser = localStorage.getItem('user_info');
+  let currentUserParse = currentUser ? JSON.parse(currentUser) : null;
+
+  if (currentUserParse?.fullname) {
+    profileName[0].innerHTML = currentUserParse.fullname.split(" ")[2];
+    profileName[1].innerHTML = currentUserParse.fullname.split(" ")[2];
+    iconLogeed[0].style.display = "block";
+    iconLogeed[1].style.display = "block";
+  } else {
+    iconLogeed[0].style.display = "none";
+    iconLogeed[1].style.display = "none";
+  }
+
+  if (!currentUserParse?.fullname) {
+    iconDefault[0].style.display = "block"
+    iconDefault[1].style.display = "block"
+  } else {
+    iconDefault[0].style.display = "none"
+    iconDefault[1].style.display = "none"
+  }
+}
+setProfileUser();
 
 
 const onLogout = () => {
