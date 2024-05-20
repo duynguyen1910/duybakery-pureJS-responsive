@@ -16,6 +16,7 @@ var products = [];
 var isExpanded = false;
 var categoriesChecked = [];
 var keyword = "";
+var categoryParam = 0;
 
 
 var onLoadCategory = async () => {
@@ -31,7 +32,8 @@ var onLoadCategory = async () => {
   category.slice(0, itemsToShow).forEach(({ id, name }) => {
     const cateItemHTML = `
       <div class="form-check mb-1">
-        <input onclick="onCheckCategory(id)" class="form-check-input" type="checkbox" value="" id="${id}">
+        <input ${categoryParam === id ? 'checked' : ''} onclick="onCheckCategory(id)"
+         class="form-check-input" type="checkbox" value="" id="${id}">
         <label class="form-check-label" for="${id}">
             ${name}
         </label>
@@ -55,7 +57,6 @@ var onCheckCategory = (checkedID) => {
   } else {
     categoriesChecked = [...categoriesChecked, parseIntID]
   }
-
 
   // re-render product list by category checkbox 
   const filteredByCategoryID = products.filter(({ name, categoryID }) =>
@@ -129,12 +130,17 @@ var onLoadProductByKeyword = async () => {
   const response = await fetch('../product.json');
   const productsGlobal = await response.json();
 
-  products = productsGlobal
+  products = productsGlobal;
 
-  const filteredProducts = productsGlobal.filter(({ name }) =>
-    name.toLowerCase().includes(keyword)
-  );
+  let filteredProducts = [];
 
+  if (keyword) {
+    filteredProducts = productsGlobal.filter(({ name }) =>
+      name.toLowerCase().includes(keyword)
+    );
+  } else {
+    filteredProducts = productsGlobal.filter(({ categoryID }) => categoryID === categoryParam);
+  }
 
   productListWrapTag.innerHTML = "";
 
@@ -195,13 +201,21 @@ var onLoadProductByKeyword = async () => {
 
 var getParamsURL = () => {
   const keywordSearch = document.querySelector('#keywordSearch');
-  const valueParam = decodeURIComponent(window.location.search).split("=")[1];
+  const params = window.location.search.slice(1).split("=");
+  const decodeValueParam = decodeURIComponent(params[1]);
 
-  keyword = valueParam.toLowerCase();
-  keywordSearch.innerHTML = valueParam;
-  inputSearchMain[0].value = valueParam;
-  inputSearchMain[1].value = valueParam;
-  document.title = valueParam;
+  if (params[0] === "category") {
+    categoryParam = parseInt(params[1]);
+
+    onCheckCategory(params[1]);
+  } else {
+    keyword = (decodeValueParam.toLowerCase());
+
+    keywordSearch.innerHTML = decodeValueParam;
+    inputSearchMain[0].value = decodeValueParam;
+    inputSearchMain[1].value = decodeValueParam;
+    document.title = decodeValueParam;
+  }
 
   onLoadProductByKeyword();
 }
@@ -234,9 +248,9 @@ setProfileUser();
 
 
 var getCategoryName = (categoryId) => {
-  const { name } = categories.find(({ id }) => id === categoryId);
+  const categoryObj = categories.find(({ id }) => id === categoryId);
 
-  return name;
+  return categoryObj?.name;
 }
 
 

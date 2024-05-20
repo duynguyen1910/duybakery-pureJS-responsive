@@ -2,61 +2,73 @@
     {
         "id": 1,
         "name": "Bánh Kem",
+        "slug": "banh-kem",
         "image": "cate1"
     },
     {
         "id": 2,
         "name": "Bánh Ngọt",
+        "slug": "banh-ngot",
         "image": "cate2"
     },
     {
         "id": 3,
         "name": "Bánh Mì",
+        "slug": "banh-mi",
         "image": "cate3"
     },
     {
         "id": 4,
         "name": "Bánh Khô",
+        "slug": "banh-kho",
         "image": "cate4"
     },
     {
         "id": 5,
         "name": "Macchi",
+        "slug": "macchi",
         "image": "cate5"
     },
     {
         "id": 6,
         "name": "Đồ Uống",
+        "slug": "do-uong",
         "image": "cate6"
     },
     {
         "id": 7,
         "name": "Bánh Quy",
+        "slug": "banh-quy",
         "image": "cate7"
     },
     {
         "id": 8,
         "name": "Bánh Chay",
+        "slug": "banh-chay",
         "image": "cate8"
     },
     {
         "id": 9,
         "name": "Chocolate",
+        "slug": "chocolate",
         "image": "cate9"
     },
     {
         "id": 10,
         "name": "Bánh Trung Thu",
+        "slug": "banh-trung-thu",
         "image": "cate10"
     },
     {
         "id": 11,
         "name": "Bánh Mặn",
+        "slug": "banh-man",
         "image": "cate11"
     },
     {
         "id": 12,
         "name": "Bánh Xốp",
+        "slug": "banh-xop",
         "image": "cate12"
     }
 ]

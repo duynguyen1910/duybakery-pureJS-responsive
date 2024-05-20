@@ -11,16 +11,16 @@ const onLoadCategory = async () => {
   const category = await response.json();
   categories = category;
 
-  category.forEach(({ name, image }) => {
+  category.forEach(({ id, name, slug, image }) => {
     const categoryItemHTML = `
-    <div class="col-6 col-md-4 col-lg-3 col-xl-2 " role="button">
-                    <div class="cate-item py-5 ">
-                        <div class="d-flex justify-content-center mb-3">
-                            <img src="../img/${image}.png" alt="" width="56">
-                        </div>
-                        <div class="cate-title text-center text-white fw-bold">${name}</div>
-                    </div>
-                </div>`
+    <a href="../Search/index.html?category=${id}" class="col-6 col-md-4 col-lg-3 col-xl-2 text-decoration-none" role="button">
+      <div class="cate-item py-5 ">
+        <div class="d-flex justify-content-center mb-3">
+          <img src="../img/${image}.png" alt="" width="56">
+        </div>
+        <div class="cate-title text-center text-white fw-bold">${name}</div>
+      </div>
+    </a>`
 
     categoryWrapTag.insertAdjacentHTML('beforeend', categoryItemHTML);
   });
@@ -121,13 +121,10 @@ const onLogout = () => {
 
 var getCategoryName = (categoryId) => {
   if (categories.length) {
-    const { name } = categories.find(({ id }) => id === categoryId);
+    const categoryObj = categories.find(({ id }) => id === categoryId);
 
-    return name;
+    return categoryObj?.name;
   }
-
-
-
 }
 
 
