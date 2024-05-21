@@ -120,7 +120,7 @@ const onLogout = () => {
 }
 
 var getCategoryName = (categoryId) => {
-  if (categories.length) {
+  if (categories.length > 0) {
     const categoryObj = categories.find(({ id }) => id === categoryId);
 
     return categoryObj?.name;
