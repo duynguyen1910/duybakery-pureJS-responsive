@@ -6,6 +6,10 @@ const fullname = document.querySelector("#fullname");
 const errorToasterFullname = document.querySelector("#errorToasterFullname");
 const errorTextFullname = document.querySelector("#errorTextFullname");
 
+const gender = document.getElementById("gender");
+const errorToasterGender = document.querySelector("#errorToasterGender");
+const errorTextGenter = document.querySelector("#errorTextGenter");
+
 const password = document.querySelector("#password");
 const errorToasterPassword = document.querySelector("#errorToasterPassword");
 const errorTextPassword = document.querySelector("#errorTextPassword");
@@ -47,6 +51,18 @@ fullname.addEventListener('input', function (e) {
     }
 });
 
+document.getElementById('gender').addEventListener('change', function (event) {
+    const selectedValue = event.target.value;
+    if (selectedValue) {
+        errorToasterGender.style.display = "none";
+        gender.style.border = "2px solid #ff6924";
+    } else {
+        errorToasterGender.style.display = "block";
+        errorTextGenter.innerHTML = "Vui lòng chọn giới tính";
+        gender.style.border = "2px solid #b3261e";
+    }
+})
+
 password.addEventListener('input', function (e) {
     const newValue = e.target.value;
 
@@ -76,59 +92,71 @@ rePassword.addEventListener('input', function (e) {
 
 
 const onRegister = () => {
-    if (usernameEle.value === "" || fullname.value === "" || password.value === "" || rePassword.value === "") return;
-
     if (!regexPhoneNumber(usernameEle.value)) {
         errorToasterUsername.style.display = "block";
         errorTextUsername.innerHTML = "Số điện thoại không đúng định dạng";
-        usernameEle.style.border = "2px solid #b3261e"
+        usernameEle.style.border = "2px solid #b3261e";
+    }
+
+    if (fullname.value.length < 3) {
+        // errorToasterFullname.style.display = "block";
+        // errorTextFullname.innerHTML = "Tên phải ít nhất 2 ký tự";
+        fullname.value = "Tên phải ít nhất 2 ký tự"
+        fullname.style.border = "2px solid #b3261e";
+    }
+
+    if (!gender.value) {
+        errorToasterGender.style.display = "block";
+        errorTextGenter.innerHTML = "Vui lòng chọn giới tính";
+        gender.style.border = "2px solid #b3261e";
     }
 
     if (!regexPassword(password.value)) {
         errorToasterPassword.style.display = "block";
         errorTextPassword.innerHTML = "Mật khẩu phải chứa ít nhất 1 chữ in hoa, thường, số và 8 ký tự";
-        password.style.border = "2px solid #b3261e"
+        password.style.border = "2px solid #b3261e";
     }
 
     if (password.value !== rePassword.value) {
         errorToasterRePassword.style.display = "block";
         errorTextRePassword.innerHTML = "Mật khẩu không khớp";
-        rePassword.style.border = "2px solid #b3261e"
+        rePassword.style.border = "2px solid #b3261e";
 
         return;
     }
 
-    const listUser = getLocalStorage(LIST_USER) || [];
-    const latestUser = listUser[listUser.length - 1];
+    if (usernameEle.value && fullname.value && gender.value && password.value && rePassword.value) {
+        const listUser = getLocalStorage(LIST_USER) || [];
+        const latestUser = listUser[listUser.length - 1];
 
-    if (latestUser?.id) User.currentId = latestUser?.id;
-    if (listUser.find(user => user.username === usernameEle.value)) {
-        errorToasterUsername.style.display = "block";
-        errorTextUsername.innerHTML = "Số điện thoại đã có người đăng ký";
-        usernameEle.style.border = "2px solid #b3261e"
+        if (latestUser?.id) User.currentId = latestUser?.id;
+        if (listUser.find(user => user.username === usernameEle.value)) {
+            errorToasterUsername.style.display = "block";
+            errorTextUsername.innerHTML = "Số điện thoại đã có người đăng ký";
+            usernameEle.style.border = "2px solid #b3261e"
 
-        return;
-    }
-
-    // upper case fullname
-    let capitalized = '';
-    capitalized += fullname.value[0].toUpperCase();
-
-    for (let i = 1; i < fullname.value.length; i++) {
-        if (fullname.value[i - 1] === ' ') {
-            capitalized += fullname.value[i].toUpperCase();
-        } else {
-            capitalized += fullname.value[i];
+            return;
         }
-    }
 
-    const newUser = new User(usernameEle.value, capitalized, rePassword.value);
+        // upper case fullname
+        let capitalized = '';
+        capitalized += fullname?.value[0].toUpperCase();
 
-    listUser.push(newUser);
-    setLocalStorage(LIST_USER, listUser);
+        for (let i = 1; i < fullname.value.length; i++) {
+            if (fullname.value[i - 1] === ' ') {
+                capitalized += fullname.value[i].toUpperCase();
+            } else {
+                capitalized += fullname.value[i];
+            }
+        }
 
-    redirectPage("Login");
+        const newUser = new User(usernameEle.value, capitalized, rePassword.value, []);
 
+        listUser.push(newUser);
+        setLocalStorage(LIST_USER, listUser);
+
+        redirectPage("Login");
+    };
 }
 
 

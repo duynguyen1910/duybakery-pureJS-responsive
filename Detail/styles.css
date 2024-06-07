@@ -1318,6 +1318,10 @@ footer {
     #total {
         margin-left: 44rem;
     }
+
+    .count-reviews {
+        font-size: 20px !important;
+    }
 }
 
 @media screen and (min-width: 1400px) {
@@ -1370,4 +1374,77 @@ footer {
 
 .variant-image-active {
     border: 2px solid #ff6924 !important;
+}
+
+.count-reviews {
+    font-weight: bold;
+    color: #010148;
+    font-size: 18px;
+}
+
+#comment-buttons {
+    display: none;
+}
+
+.comment-write-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.comment-write-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 14px;
+    letter-spacing: 0.062rem;
+    border: 1px solid #ccc;
+    background: transparent;
+    border-radius: 3px;
+    margin-bottom: 2px;
+    outline: none;
+}
+
+.comment-write-input:focus {
+    border: 2px solid #ff6924;
+}
+
+.comment-author {
+    color: #0866ff;
+}
+
+.comment-create-at {
+    color: #82869e;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.comment-content {
+    color: #010148;
+    font-size: 15px;
+}
+
+.cancel-btn {
+    padding: 10px 20px;
+    color: #ff6924;
+    background-color: #ffeae1;
+    border: #ff6924 1px solid;
+    border-radius: 3px;
+    border: none;
+    margin-bottom: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.post-btn {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #ff6924;
+    border-radius: 3px;
+    border: none;
+    margin-bottom: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
 }

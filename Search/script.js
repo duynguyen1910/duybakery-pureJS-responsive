@@ -1,12 +1,17 @@
 var productListWrapTag = document.querySelector("#productListWrapTag");
+
 var profileName = document.querySelectorAll(".product-name-id");
 var iconDefault = document.querySelectorAll(".profile-icon");
 var iconLogeed = document.querySelectorAll(".btn-group");
 var dropdownMenuButton1 = document.getElementById("dropdownMenuButton1");
+var itemCart = document.getElementsByClassName('item-cart');
+
 var dropdownSearch = document.getElementById("dropdownSearch");
 var inputSearchMain = document.querySelectorAll(".input-search-main");
 var dropdownMenuMain = document.querySelectorAll(".dropdown-menu-main");
 var buttonSearch = document.querySelectorAll(".button-search");
+
+
 
 var moreButton = document.getElementById("more");
 var lessButton = document.getElementById("less");
@@ -17,6 +22,8 @@ var isExpanded = false;
 var categoriesChecked = [];
 var keyword = "";
 var categoryParam = 0;
+
+var currentUserParse = {};
 
 
 var onLoadCategory = async () => {
@@ -180,7 +187,7 @@ var onLoadProductByKeyword = async () => {
                             <span class="price-percent-reduction">${product.discount}%</span>
                         </div>
                         <div class="functional-buttons clearfix">
-                            <span class="button ajax_add_to_cart_button">Thêm nhanh</span>
+                            <span onclick="onAddProductToCart(${product.id})" class="button ajax_add_to_cart_button">Thêm nhanh</span>
                             <span class="btn-tooltip addToWishlist">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                             </span>
@@ -224,11 +231,13 @@ getParamsURL();
 
 var setProfileUser = () => {
   const currentUser = localStorage.getItem('user_info');
-  let currentUserParse = currentUser ? JSON.parse(currentUser) : null;
+  currentUserParse = currentUser ? JSON.parse(currentUser) : null;
 
   if (currentUserParse?.fullname) {
-    profileName[0].innerHTML = currentUserParse.fullname.split(" ")[2];
-    profileName[1].innerHTML = currentUserParse.fullname.split(" ")[2];
+    const nameParts = currentUserParse.fullname.trim().split(" ");
+    const lastName = nameParts[nameParts.length - 1];
+    profileName[0].innerHTML = lastName;
+    profileName[1].innerHTML = lastName;
     iconLogeed[0].style.display = "block";
     iconLogeed[1].style.display = "block";
   } else {
@@ -246,6 +255,55 @@ var setProfileUser = () => {
 }
 setProfileUser();
 
+
+var setCartCount = () => {
+  const currentUser = localStorage.getItem('user_info');
+  const userParsed = JSON.parse(currentUser);
+
+  if (userParsed?.id && userParsed?.cart.length) {
+    itemCart[0].innerHTML = userParsed.cart.length;
+    itemCart[1].innerHTML = userParsed.cart.length;
+    itemCart[0].style.display = 'flex';
+    itemCart[1].style.display = 'flex';
+  } else {
+    itemCart[0].style.display = 'none';
+    itemCart[1].style.display = 'none';
+  }
+}
+
+setCartCount();
+
+var onAddProductToCart = (productID) => {
+  const PRODUCT_QUANTITY = 1;
+  const listUser = getLocalStorage("list_user") || [];
+  const user = listUser.find(({ id }) => id === currentUserParse.id);
+  const productDetail = products.find(({id}) => id === productID);
+
+  if (user) {
+    const productInCart = user.cart.find(item => item.id === productID);
+
+    if (productInCart) {
+      productInCart.quantity += PRODUCT_QUANTITY;
+    } else {
+      user.cart.push(new Product(
+        productDetail.id,
+        productDetail.name,
+        productDetail.images[0],
+        PRODUCT_QUANTITY,
+        productDetail.price
+      ));
+
+
+    }
+
+    localStorage.setItem('list_user', JSON.stringify(listUser));
+    localStorage.setItem('user_info', JSON.stringify(user));
+
+    setCartCount();
+  } else {
+    redirectPage("Login");
+  }
+}
 
 var getCategoryName = (categoryId) => {
   const categoryObj = categories.find(({ id }) => id === categoryId);

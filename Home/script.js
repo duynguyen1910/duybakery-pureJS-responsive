@@ -1,9 +1,12 @@
 const profileName = document.querySelectorAll(".product-name-id");
 const iconDefault = document.querySelectorAll(".profile-icon");
 const iconLogeed = document.querySelectorAll(".btn-group");
+const itemCart = document.getElementsByClassName('item-cart');
 
 var categories = [];
 var products = [];
+var currentUserParse = {};
+
 
 const categoryWrapTag = document.getElementById("categoryWrapTag");
 const onLoadCategory = async () => {
@@ -29,12 +32,13 @@ onLoadCategory();
 
 
 const productListWrapTag = document.querySelector("#productListWrapTag");
-const onLoadProduct = async () => {
-  const response = await fetch('../product.json');
-  products = await response.json();
+const onLoadProduct = () => {
+  setTimeout(async () => {
+    const response = await fetch('../product.json');
+    products = await response.json();
 
-  products.forEach(product => {
-    const productItemHTML = `
+    products.forEach(product => {
+      const productItemHTML = `
         <div class="col-sm-6 col-lg-4 col-xxl-3">
             <div class="product-block">
                 <div class="left-block">
@@ -69,7 +73,7 @@ const onLoadProduct = async () => {
                             <span class="price-percent-reduction">${product.discount}%</span>
                         </div>
                         <div class="functional-buttons clearfix">
-                            <span class="button ajax_add_to_cart_button">Thêm nhanh</span>
+                            <span onclick="onAddProductToCart(${product})" class="button ajax_add_to_cart_button">Thêm nhanh</span>
                             <span class="btn-tooltip addToWishlist">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                             </span>
@@ -83,19 +87,53 @@ const onLoadProduct = async () => {
         </div>
     `;
 
-    productListWrapTag.insertAdjacentHTML('beforeend', productItemHTML);
-  });
+      productListWrapTag.insertAdjacentHTML('beforeend', productItemHTML);
+    });
+  }, 1000);
 }
 onLoadProduct();
 
 
+var onAddProductToCart = (product) => {
+  const ITEM_QUANTITY = 1;
+  const listUser = getLocalStorage(LIST_USER) || [];
+
+  const user = listUser.find(({ id }) => id === currentUserParse.id);
+
+  if (user) {
+    const productInCart = user.cart.find(item => item.id === productDetail.id);
+
+    if (productInCart) {
+      productInCart.quantity += ITEM_QUANTITY;
+    } else {
+      user.cart.push(new Product(
+        product.id,
+        product.name,
+        product.images[0],
+        ITEM_QUANTITY,
+        product.price
+      ));
+    }
+
+    localStorage.setItem('list_user', JSON.stringify(listUser));
+    localStorage.setItem('user_info', JSON.stringify(user));
+
+    setCartCount();
+  } else {
+    redirectPage("Login");
+  }
+}
+
+
 const setProfileUser = () => {
   const currentUser = localStorage.getItem('user_info');
-  let currentUserParse = currentUser ? JSON.parse(currentUser) : null;
+  currentUserParse = currentUser ? JSON.parse(currentUser) : null;
 
   if (currentUserParse?.fullname) {
-    profileName[0].innerHTML = currentUserParse.fullname.split(" ")[2];
-    profileName[1].innerHTML = currentUserParse.fullname.split(" ")[2];
+    const nameParts = currentUserParse.fullname.trim().split(" ");
+    const lastName = nameParts[nameParts.length - 1];
+    profileName[0].innerHTML = lastName;
+    profileName[1].innerHTML = lastName;
     iconLogeed[0].style.display = "block";
     iconLogeed[1].style.display = "block";
   } else {
@@ -112,6 +150,24 @@ const setProfileUser = () => {
   }
 }
 setProfileUser();
+
+
+var setCartCount = () => {
+  const currentUser = localStorage.getItem('user_info');
+  const userParsed = JSON.parse(currentUser);
+
+  if (userParsed?.id && userParsed?.cart.length) {
+    itemCart[0].innerHTML = userParsed.cart.length;
+    itemCart[1].innerHTML = userParsed.cart.length;
+    itemCart[0].style.display = 'flex';
+    itemCart[1].style.display = 'flex';
+  } else {
+    itemCart[0].style.display = 'none';
+    itemCart[1].style.display = 'none';
+  }
+}
+
+setCartCount();
 
 
 const onLogout = () => {
@@ -316,7 +372,6 @@ var TACarousel = document.querySelector("#carouselExampleAutoplaying");
 let currentItem, nextItem;
 
 document.addEventListener("DOMContentLoaded", (e) => {
-  // console.log("AAAA", captions[0]);
   currentItem = captions[0];
 
   currentItem.firstElementChild.classList.remove(hiddenClass1);

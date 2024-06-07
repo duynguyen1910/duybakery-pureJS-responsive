@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Duy Bakery</title>
+    <title>Duy Bakery | Thanh toán</title>
     <link rel="icon" type="image/x-icon" href="../img/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/boo
 tstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/drift-zoom/dist/Drift.min.css">
 </head>
 
 <body>
@@ -113,132 +112,102 @@ tstrap.min.css" rel="stylesheet">
             </div>
         </nav>
     </div>
-
     <div>
         <div class="router py-5">
-            <div class="title mb-xxl-2"><span class="orange-text">Chi Tiết</span> Sản Phẩm</div>
+            <div class="title mb-xxl-2"><span class="orange-text">Thanh Toán</span></div>
             <div class="d-flex justify-content-center align-items-center">
                 <div>
-                    <a class="text-gray" href="../Home/index.html">Trang chủ</a>
+                    <a class="text-gray" href="../Cart/index.html">Giỏ hàng</a>
                     <i class="fa fa-chevron-right fa-xs" style=" color: #010148;   margin-right: 8px;"
                         aria-hidden="true"></i>
-                    <span class="text-orange">Chi tiết</span>
+                    <span class="text-orange">Thanh toán</span>
                 </div>
             </div>
         </div>
-        <div
-            class="wrap-product-detail d-flex justify-content-center align-items-center flex-column flex-xl-row py-5 px-xl-5">
-            <div class="mb-4 mb-xl-0 me-xl-5">
-                <div class="detail-img d-flex justify-content-center align-items-center mb-2 mb-md-4">
-                    <img id="mainImage" src="../img/product1.webp" alt="" data-zoom="../img/product1-clone.png"
-                        width="200" class="product-img">
-                    <i class="fa fa-search fa-lg zoom-img" style="color: #010148;" aria-hidden="true"></i>
+        <div id="cartBody" class="py-3 py-md-5 p-3 p-md-4 p-xl-5">
+            <div class="accordion-title mb-xxl-2 mb-lg-5 mx-lg-5">Thông tin người nhận</div>
+            <div class="accordion-child px-lg-5 mb-lg-5">
+                <div class="receiver-info">
+                    <span id="usernamePayment"></span>&nbsp;&nbsp;<span id="phoneNumberPayment"></span>
                 </div>
-                <div class="d-flex justify-content-center align-items-center">
-                    <div id="variantWrapImages" class="detail-child d-flex justify-content-between">
-
+                <div class="inputBox">
+                    <select class="text-field" id="province" name="gender">
+                    </select>
+                    <label>Tỉnh / Thành phố</label>
+                    <div id="errorProvinceToaster" class="toater-error">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span id="errorProvinceToaster">Vui lòng chọn tình / thành phố</span>
+                    </div>
+                </div>
+                <div class="inputBox">
+                    <select class="text-field" id="district" name="gender">
+                    </select>
+                    <label>Quận / Huyện</label>
+                    <div id="errorDistrictToaster" class="toater-error">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span id="errorDistrictToaster">Vui lòng chọn quận / huyện</span>
+                    </div>
+                </div>
+                <div class="inputBox">
+                    <select class="text-field" id="ward" name="gender">
+                    </select>
+                    <label>Phường / Xã</label>
+                    <div id="errorWardToaster" class="toater-error">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span id="errorWardToaster">Vui lòng chọn phường / xã</span>
+                    </div>
+                </div>
+                <div class="inputBox">
+                    <input id="address" class="text-field" type="text" name="text" required value="" />
+                    <label>Địa chỉ cụ thể</label>
+                    <div id="errorAddressToaster" class="toater-error">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span id="errorAddressToaster">Vui lòng nhập đia chỉ cụ thể</span>
                     </div>
                 </div>
             </div>
-            <div class="details p-3 px-md-5">
-                <span id="disCount" class="price-percent-reduction">5%</span>
-                <div id="productName" class="product-name mb-xxl-1">
-                    Bánh Kem Fresh Garden
-                </div>
-                <div class="d-flex align-items-center mb-3 mb-xxl-4">
-                    <div style="margin-right: 18px;">
-                        <i class="fas fa-star  star"></i>
-                        <i class="fas fa-star  star"></i>
-                        <i class="fas fa-star  star"></i>
-                        <i class="fas fa-star  star"></i>
-                        <i class="fas fa-star  star"></i>
 
+            <div class="accordion-title mb-xxl-2 mb-lg-5 mx-lg-5">Sản phẩm</div>
+            <div id="wrapperProductCart" class="container-fluid mb-lg-5">
+
+            </div>
+            <div class="accordion-title mb-xxl-2 mb-lg-5 mx-lg-5">Phương thức thanh toán</div>
+            <div class="px-lg-5">
+                <div id="payment-options">
+                    <div class="payment-option mb-2" data-value="cod">
+                        <span>Thanh toán khi nhận hàng</span>
+                        <i class="fa-solid fa-check fa-xs"></i>
                     </div>
-                    <div class="desc-product">(2 đánh giá của khách hàng)</div>
-                </div>
-                <div class="price-wapper  mb-xxl-4">
-                    <div id="productOldPrice" class="price">510.098&nbsp;₫</div>
-                    <div id="productPrice" class="price-sale">600.872&nbsp;₫</div>
-                </div>
-                <div id="productDesc" class="desc-product mb-4  mb-xxl-5">
-                    Ngon, no và tốt cho sức khỏe, Granola hữu cơ Biona với quả dại của chúng tôi chính là thứ giúp bạn
-                    ra
-                    khỏi giường. Sự ngon lành của yến mạch nguyên hạt cuộn được kết hợp với nhiều loại quả mọng hữu cơ
-                    thơm
-                    và nướng thành từng chùm giòn vừa bổ dưỡng.
-                </div>
-                <div class="d-flex align-items-center mb-3  mb-xxl-4">
-                    <div class="border qty-input me-4">
-                        <button onclick="onMinusQuantity()" class="qty-count qty-count--minus" data-action="minus"
-                            type="button">-</button>
-                        <input id="productQuantity" class="product-qty" type="number" name="product-qty" min="0"
-                            value="1">
-                        <button onclick="onPlusQuantity()" class="qty-count qty-count--add" data-action="add"
-                            type="button">+</button>
+                    <div class="payment-option mb-2" data-value="bank">
+                        <span>Chuyển khoản ngân hàng</span>
+                        <i class="fa-solid fa-check fa-xs"></i>
                     </div>
-                    <div onclick="onAddProductToCart()" class="blog-button">
-                        <button><i class="fas fa-shopping-cart "></i> Thêm vào giỏ</button>
+                    <div class="payment-option mb-2" data-value="bank">
+                        <span>Ví DuyBakery Pay</span>
+                        <i class="fa-solid fa-check fa-xs"></i>
                     </div>
                 </div>
-                <div class="wrap-whislist  mb-xxl-4">
-                    <div class="whislist-button me-4">
-                        <button><i class="fa fa-heart" aria-hidden="true"></i> Thêm vào yêu thích</button>
-                    </div>
-                    <div class="compare-button">
-                        <button> <i class="fa fa-comment" aria-hidden="true"></i> Phản hồi</button>
-                    </div>
+            </div>
+            <div class="mt-5" style="border-top: 1.5px dashed #ccc;"></div>
+            <div id="total" style="bottom: 0; left: 0; right: 0; z-index: 10;"
+                class="py-3 my-md-5 px-3 px-sm-5 px-md-3 bg-white pt-4 position-fixed bg-white shadow-lg">
+                <div class="d-flex justify-content-between  mb-4 mb-xl-5">
+                    <h6 class="title-total-cart">Tổng thanh toán: </h6>
+                    <h5 id="totalCart" class="fw-bold mb-0 orange-text"></h5>
                 </div>
-                <div class="desc-product mb-xl-4">
-                    <div style="display: flex; margin-bottom: 6px;">
-                        <div class="tag">MSP:</div> BK-191001
-                    </div>
-                    <div style="display: flex;margin-bottom: 6px;">
-                        <div class="tag">Danh mục: </div>Bánh kem
-                    </div>
-                    <div style="display: flex;">
-                        <div class="tag">Thẻ: </div>banhkem, floweroflove
-                    </div>
-                </div>
-                <div class="share">
-                    <span class="tag">Chia sẻ: </span>
-                    <div>
-                        <i class="fab fa-facebook-square share fa-lg mx-1"></i>
-                        <i class="fab fa-twitter-square share fa-lg me-1"></i>
-                        <i class="fab fa-linkedin share fa-lg"></i>
-                    </div>
+
+                <div class="coupon d-flex justify-content-end align-items-center">
+                    <button class="coupon-button-payment">Thanh toán</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="title-center pb-3"><span class="orange-text">Đánh Giá</span> Sản Phẩm</div>
-    <div class="p-3 px-md-5">
-        <div id="countReview" class="count-reviews mb-1 mb-md-2 mb-xl-5 px-xl-5">
-            0 phản hồi
-        </div>
-
-        <div id="listComment" class="list-comment">
-       
-        </div>
-
-        <div class="comment-container py-4 px-xl-5">
-            <div class="d-flex align-items-end gap-3 mb-3">
-                <img id="currentImgComment" class="comment-write-img" src="../img/my-avt.jpg" alt="">
-                <input id="commentInput" onfocus="onFocusInputComment()" class="comment-write-input" type="text"
-                    placeholder="Viết đánh giá của bạn ...">
-            </div>
-            <div id="comment-buttons" class="justify-content-end gap-3 ">
-                <button onclick="onCancelInput()" class="cancel-btn">Hủy</button>
-                <button onclick="onPostComment()" class="post-btn">Phản hồi</button>
-            </div>
-        </div>
-    </div>
     <div class="p-3 py-sm-5 px-xl-5" style="background-color: #f1f1f1;">
         <div class="title-center pb-3">Có Thể Bạn <span class="orange-text">Quan Tâm</span></div>
         <div class="desc-title text-center mb-3 mb-sm-5 h-auto">
-            “Giá trị của món ăn ngon, được quyết định bởi lương tâm của người đầu bếp” <br />
-            “Thành công của những thợ làm bánh xuất phát từ đôi bàn tay vàng cùng khối óc sáng tạo và trái tim đầy nhiệt
-            huyết.”
+            "Bánh ngọt – món quà tuyệt vời dành cho bất cứ ai" <br />
+            "Thưởng thức vị ngọt ngào của bánh, cảm nhận tình yêu đong đầy"
         </div>
         <div class="container-fluid">
             <div class="row px-2 px-sm-0 px-md-5 px-lg-4 px-xl-5 gy-5 gx-md-5 gy-md-5 gy-sm-4">
@@ -509,12 +478,14 @@ tstrap.min.css" rel="stylesheet">
                                 <h5 class="name">
                                     <span class="product-name">Bánh kem Kiss me more</span>
                                 </h5>
-                                <div class="comments_note product-rating clearfix">
+                                <div
+                                    class="comments_note product-rating clearfix d-flex justify-content-between align-items-center">
                                     <div class="star_content">
                                         <i class="fas fa-star star"></i>
                                         <i class="fas fa-star star"></i>
                                         <i class="fas fa-star star"></i>
                                     </div>
+                                    <span>Bánh Kem</span>
                                 </div>
                                 <div class="content_price">
                                     <span class="price product-price">370.000₫
@@ -581,7 +552,7 @@ tstrap.min.css" rel="stylesheet">
         </div>
     </div>
 
-    <div id="btn-gotop" class="d-flex justify-content-center align-items-center btn-gotop">
+    <div id="btn-gotop" class="d-none d-md-flex justify-content-center align-items-center btn-gotop">
         <button><i class="fa-solid fa-chevron-up"></i></button>
     </div>
 
@@ -680,18 +651,14 @@ tstrap.min.css" rel="stylesheet">
         </div>
     </footer>
 
-
     <script src="../utils/common.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/drift-zoom/dist/Drift.min.js"></script>
-    <script src="https://kit.fontawesome.com/1c2be09150.js" crossorigin="anonymous"></script>
-    <script src="./script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootst
-rap.bundle.min.js"></script>
     <script src="../utils/regex.js"></script>
     <script src="../utils/constants.js"></script>
     <script src="../models/User.js"></script>
     <script src="../models/Product.js"></script>
-    <script src="../models/Comments.js"></script>
+    <script src="https://kit.fontawesome.com/1c2be09150.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootst
+rap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 

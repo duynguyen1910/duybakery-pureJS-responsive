@@ -14,6 +14,13 @@ var itemCart = document.getElementsByClassName('item-cart');
 var totalCart = document.getElementById('totalCart');
 var inputQuantity = document.getElementsByClassName("input-quantity");
 
+var provinceSelect = document.getElementById("province");
+var paymentOptions = document.querySelectorAll(".payment-options");
+
+var usernamePayment = document.getElementById("usernamePayment");
+var phoneNumberPayment = document.getElementById("phoneNumberPayment");
+
+
 var products = [];
 // var cart = [];
 var currentUserParse = {};
@@ -30,6 +37,9 @@ var setProfileUser = () => {
     profileName[1].innerHTML = lastName;
     iconLogeed[0].style.display = "block";
     iconLogeed[1].style.display = "block";
+
+    usernamePayment.innerText = currentUserParse.fullname;
+    phoneNumberPayment.innerText = currentUserParse.username.replace('0', '(+84) ');
   } else {
     iconLogeed[0].style.display = "none";
     iconLogeed[1].style.display = "none";
@@ -64,9 +74,7 @@ var renderCart = () => {
             <h6 class="fw-bold text-sm-start">${item.name}</h6>
             <h6 class="price fw-bold text-xl-start" style="color: #ff6924;">${formatVND(item.price)}&nbsp;</h6>
             <div class="qty-input border">
-                <button onclick="onMinusQuantity(${item.id})" class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
-                <input data-product-id="${item.id}" class="product-qty input-quantity" type="number" name="product-qty" min="0" value=${item.quantity}>
-                <button onclick="onPlusQuantity(${item.id})" class="qty-count qty-count--add" data-action="add" type="button">+</button>
+                <input disabled data-product-id="${item.id}" class="product-qty input-quantity" type="number" name="product-qty" min="0" value=${item.quantity}>
             </div>
             <i class="fa fa-trash d-none" aria-hidden="true"></i>
         </div>
@@ -75,9 +83,7 @@ var renderCart = () => {
             ${formatVND(item.price)}&nbsp;</h6>
         <div class="d-none d-md-block col-md-3 ">
             <div class="border qty-input">
-                <button onclick="onMinusQuantity(${item.id})" class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
-                <input data-product-id="${item.id}" class="product-qty input-quantity" type="number" name="product-qty" min="0" value=${item.quantity}>
-                <button  onclick="onPlusQuantity(${item.id})" class="qty-count qty-count--add" data-action="add" type="button">+</button>
+                <input disabled data-product-id="${item.id}" class="product-qty input-quantity" type="number" name="product-qty" min="0" value=${item.quantity}>
             </div>
         </div>
 
@@ -110,24 +116,6 @@ var setCartCount = () => {
 setCartCount();
 
 
-var onMinusQuantity = (productID) => {
-  const currentUser = JSON.parse(localStorage.getItem('user_info'));
-  const productItem = currentUser.cart.find(item => item.id === productID);
-
-  if (productItem.quantity > 1) {
-    updateCartQuantity(productID, productItem.quantity - 1);
-  }
-}
-
-
-var onPlusQuantity = (productID) => {
-  const currentUser = JSON.parse(localStorage.getItem('user_info'));
-  const productItem = currentUser.cart.find(item => item.id === productID);
-
-  updateCartQuantity(productID, productItem.quantity + 1);
-}
-
-
 var addInputEventListeners = () => {
   document.querySelectorAll('.input-quantity').forEach(input => {
     input.addEventListener('input', (event) => {
@@ -147,7 +135,6 @@ addInputEventListeners();
 
 const listUser = getLocalStorage('list_user') || [];
 var updateCartQuantity = (productID, newQuantity) => {
-  console.log({ productID, newQuantity })
   const currentUser = listUser.find(({ id }) => id === currentUserParse.id);
   const productIndex = currentUser.cart.findIndex(item => item.id === productID);
 
@@ -161,6 +148,12 @@ var updateCartQuantity = (productID, newQuantity) => {
   addInputEventListeners();
 }
 
+document.querySelectorAll('.payment-option').forEach((option) => {
+  option.addEventListener('click', () => {
+    document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('selected'));
+    option.classList.add('selected');
+  })
+})
 
 var keyword;
 

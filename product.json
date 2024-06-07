@@ -13,7 +13,24 @@
         "oldPrice": 395000,
         "discount": 2,
         "description": "Phần trang trí: jelly caramel, vụn bánh gato, dâu tươi, đào, việt quất, kem tươi",
-        "categoryID": 1
+        "categoryID": 1,
+        "reviews": [
+            {
+                "author": "Nguyễn Tấn Bảo",
+                "createAt": "23:07 06-06-2024",
+                "content": "Bánh bên Duy Bakery rất ngon và giao hàng nhanh lắm nha mọi người"
+            },
+            {
+                "author": "Nguyễn Tấn Duy",
+                "createAt": "23:07 02-09-2024",
+                "content": "Bánh bên Duy Bakery rất ngon và giao hàng nhanh lắm nha mọi người"
+            },
+            {
+                "author": "Nguyễn Chí Thành",
+                "createAt": "23:07 16-07-2024",
+                "content": "Bánh bên Duy Bakery rất ngon và giao hàng nhanh lắm nha mọi người"
+            }
+        ]
     },
     {
         "id": 2,
@@ -28,7 +45,19 @@
         "oldPrice": 390000,
         "discount": 6,
         "description": "Phần trang trí: jelly caramel, vụn bánh gato, dâu tươi, đào, việt quất, kem tươi",
-        "categoryID": 1
+        "categoryID": 1,
+        "reviews": [
+            {
+                "author": "Bảo",
+                "createAt": "23:07 06-06-2024",
+                "content": "Bánh bên Duy Bakery rất ngon và giao hàng nhanh lắm nha mọi người"
+            },
+            {
+                "author": "Duy",
+                "createAt": "23:07 02-09-2024",
+                "content": "Bánh bên Duy Bakery rất ngon và giao hàng nhanh lắm nha mọi người"
+            }
+        ]
     },
     {
         "id": 3,

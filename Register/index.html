@@ -15,8 +15,7 @@
             <img class="logo" src="../img/white-logo.png" alt="" width="180" height="180">
         </a>
         <div class="inputBox">
-            <input id="username" class="text-field" type="text" name="text" required
-              value="" />
+            <input id="username" class="text-field" type="text" name="text" required value="" />
             <label>Số điện thoại</label>
             <div id="errorToasterUsername" class="toater-error">
                 <i class="fas fa-exclamation-circle"></i>
@@ -25,8 +24,7 @@
             </div>
         </div>
         <div class="inputBox">
-            <input id="fullname" class="text-field" type="text" name="text" required
-                value="" />
+            <input id="fullname" class="text-field" type="text" name="text" required value="" />
             <label>Họ và tên</label>
             <div id="errorToasterFullname" class="toater-error">
                 <i class="fas fa-exclamation-circle"></i>
@@ -35,8 +33,21 @@
             </div>
         </div>
         <div class="inputBox">
-            <input id="password" class="text-field" type="password" name="text" required
-              value="" />
+            <select class="text-field" id="gender" name="gender">
+                <option value="" disabled selected>Chưa nhập</option>
+                <option value="male">Nam</option>
+                <option value="female">Nữ</option>
+                <option value="other">Khác</option>
+            </select>
+            <label>Giới tính</label>
+            <div id="errorToasterGender" class="toater-error">
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="errorTextGenter">Bạn có chắc chắn đã nhập đúng tên
+                    của mình không?</span>
+            </div>
+        </div>
+        <div class="inputBox">
+            <input id="password" class="text-field" type="password" name="text" required value="" />
             <label>Mật khẩu</label>
             <div id="errorToasterPassword" class="toater-error">
                 <i class="fas fa-exclamation-circle"></i>
@@ -50,8 +61,7 @@
             </div>
         </div>
         <div class="inputBox">
-            <input id="rePassword" class="text-field" type="password" name="text" required
-                value="" />
+            <input id="rePassword" class="text-field" type="password" name="text" required value="" />
             <label>Nhập lại mật khẩu</label>
             <div id="errorToasterRePassword" class="toater-error">
                 <i class="fas fa-exclamation-circle"></i>
