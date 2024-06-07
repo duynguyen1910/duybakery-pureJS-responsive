@@ -51,18 +51,6 @@ fullname.addEventListener('input', function (e) {
     }
 });
 
-document.getElementById('gender').addEventListener('change', function (event) {
-    const selectedValue = event.target.value;
-    if (selectedValue) {
-        errorToasterGender.style.display = "none";
-        gender.style.border = "2px solid #ff6924";
-    } else {
-        errorToasterGender.style.display = "block";
-        errorTextGenter.innerHTML = "Vui lòng chọn giới tính";
-        gender.style.border = "2px solid #b3261e";
-    }
-})
-
 password.addEventListener('input', function (e) {
     const newValue = e.target.value;
 
@@ -99,16 +87,9 @@ const onRegister = () => {
     }
 
     if (fullname.value.length < 3) {
-        // errorToasterFullname.style.display = "block";
-        // errorTextFullname.innerHTML = "Tên phải ít nhất 2 ký tự";
-        fullname.value = "Tên phải ít nhất 2 ký tự"
+        errorToasterFullname.style.display = "block";
+        errorTextFullname.innerHTML = "Tên phải ít nhất 2 ký tự";
         fullname.style.border = "2px solid #b3261e";
-    }
-
-    if (!gender.value) {
-        errorToasterGender.style.display = "block";
-        errorTextGenter.innerHTML = "Vui lòng chọn giới tính";
-        gender.style.border = "2px solid #b3261e";
     }
 
     if (!regexPassword(password.value)) {
